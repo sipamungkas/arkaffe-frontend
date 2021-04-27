@@ -1,0 +1,67 @@
+.hero {
+  height: 32rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  padding: 3rem 0;
+  color: white;
+}
+
+.hero-title {
+  font-family: Rubik;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  text-align: left;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 500;
+  text-align: left;
+  margin: 1rem 0;
+}
+
+.cta {
+  background: #ffba33;
+  color: #6a4029;
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: normal;
+  padding: 0 3.5rem;
+  height: 3rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    height: 35rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    width: 50%;
+  }
+
+  .hero-description {
+    width: 50%;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 500;
+    text-align: left;
+    margin: 3rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero {
+    height: 32rem;
+  }
+}
