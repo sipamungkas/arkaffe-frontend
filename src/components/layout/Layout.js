@@ -1,9 +1,12 @@
-import classes from './Layout.module.css'
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-export default function Layout() {
-    return (
-        <div>
-            
-        </div>
-    )
+export default function Layout(props) {
+  return (
+    <div>
+      <Navbar />
+      {props.child}
+      <Footer />
+    </div>
+  );
 }
