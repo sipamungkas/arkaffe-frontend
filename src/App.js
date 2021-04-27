@@ -1,16 +1,14 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import {  Switch, Route } from "react-router-dom";
 
-import { homepage } from "./pages/HomePage";
+import Home from "./pages/home/Home";
 
 
 function App() {
   return (
     <>
-      <BrowserRouter>
         <Switch>
-          <Route path="/" exact component={homepage}></Route>
+          <Route path="/" exact component={Home}/>
         </Switch>
-      </BrowserRouter>
     </>
   );
 }
