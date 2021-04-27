@@ -1,7 +1,12 @@
 footer {
-  background: goldenrod;
+  /* background: goldenrod; */
   display: flex;
   flex: 1;
+  padding: 1rem;
+}
+
+.logo {
+  margin: 1rem 0;
 }
 
 .brand-logo {
@@ -12,9 +17,29 @@ footer {
 .social-media-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
+  margin: 1rem 0;
 }
 
 .social-media-icon {
-  height: 2rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+.product,
+.engage {
+  width: 40%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
 }
