@@ -1,11 +1,19 @@
+import { useLocation } from "react-router-dom";
+
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 export default function Layout(props) {
+  const location = useLocation();
+  const hidePath = [/signup/, /login/, /forgot/, /reset-password/];
+  const isMatch = hidePath.some((path) => path.test(location.pathname));
+  if (isMatch) {
+    return <>{props.children}</>;
+  }
   return (
     <div>
       <Navbar />
-      {props.child}
+      {props.children}
       <Footer />
     </div>
   );
