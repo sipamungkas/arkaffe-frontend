@@ -21,21 +21,21 @@ export default function Footer() {
             <div className={classes["social-media-circle"]}>
               <img
                 className={classes["social-media-icon"]}
-                src="/assets/icons/facebook.svg"
+                src="/assets/icons/icon_facebook.svg"
                 alt=""
               />
             </div>
             <div className={`${classes["social-media-circle"]} mx-2`}>
               <img
                 className={classes["social-media-icon"]}
-                src="/assets/icons/icon_twitter.png"
+                src="/assets/icons/icon_twitter.svg"
                 alt=""
               />
             </div>
             <div className={classes["social-media-circle"]}>
               <img
                 className={classes["social-media-icon"]}
-                src="/assets/icons/icon_instagram.png"
+                src="/assets/icons/icon_instagram.svg"
                 alt=""
               />
             </div>
