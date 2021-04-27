@@ -7,8 +7,12 @@ export default function Layout(props) {
   const location = useLocation();
   const hidePath = [/signup/, /login/, /forgot/, /reset-password/];
   const isMatch = hidePath.some((path) => path.test(location.pathname));
+
   if (isMatch) {
-    return <>{props.children}</>;
+    return (<>
+    {props.children}
+    <Footer/>
+    </>);
   }
   return (
     <div>

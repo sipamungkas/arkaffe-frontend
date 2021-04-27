@@ -104,58 +104,6 @@ export class Login extends Component {
               </div>
             </span>
           </div>
-          {/* <footer className="bottom-section">
-            <div className="row">
-              <div className="app-info">
-                <div className="app-name">
-                  <img
-                    alt="logo"
-                    src="/assets/icons/icon_arkaffe.png"
-                    style={{ width: "30px" }}
-                  ></img>
-                  Arkaffe Coffee Shop
-                </div>
-                <p className="app-description">
-                  Coffee Shop is a store that sells some good meals, and
-                  especially coffee. We provide high quality beans
-                </p>
-                <div className="app-social">
-                  <img
-                    alt="facebook"
-                    src="/assets/icons/icon_facebook.png"
-                    style={{ width: "30px" }}
-                  ></img>
-                  <img
-                    alt="twitter"
-                    src="/assets/icons/icon_twitter.png"
-                    style={{ width: "30px" }}
-                  ></img>
-                  <img
-                    alt="instagram"
-                    src="/assets/icons/icon_instagram.png"
-                    style={{ width: "30px" }}
-                  ></img>
-                </div>
-                <p className="app-trademark">@2021Arkaffe</p>
-              </div>
-              <div className="product-info">
-                <h4 className="info-title">Product</h4>
-                <p className="info-download">Download</p>
-                <p className="info-pricing">Pricing</p>
-                <p className="info-locations">Locations</p>
-                <p className="info-countries">Countries</p>
-                <p className="info-blog">Blog</p>
-              </div>
-              <div className="misc-info">
-                <h4 className="misc-title">Engage</h4>
-                <p className="misc-coffeeshop">Coffee Shop?</p>
-                <p className="misc-faq">FAQ</p>
-                <p className="misc-about">About Us</p>
-                <p className="misc-privacy">Privacy Policy</p>
-                <p className="misc-tos">Terms of Service</p>
-              </div>
-            </div>
-          </footer> */}
         </main>
       </>
     );
