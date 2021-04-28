@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 import classes from "./Navbar.module.css";
 
@@ -6,14 +6,14 @@ export default function Navbar() {
   const history = useHistory();
   return (
     <nav className="container navbar navbar-expand-lg navbar-light bg-white ">
-      <a className="navbar-brand" href="/">
+      <Link className="navbar-brand" to="/">
         <img
           className={classes["brand-logo"]}
           src={"/assets/icons/icon_arkaffe.png"}
           alt="Arkaffe Icon"
         />
-        Coffe Shop
-      </a>
+        Coffee Shop
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -29,24 +29,24 @@ export default function Navbar() {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mx-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="/">
+            <Link className="nav-link" href="/">
               Home <span className="sr-only">(current)</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">
+            <Link className="nav-link" href="/">
               Product
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">
+            <Link className="nav-link" href="/">
               Your Cart
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">
+            <Link className="nav-link" href="/">
               History
-            </a>
+            </Link>
           </li>
         </ul>
         <div className={classes["button-container"]}>
@@ -58,7 +58,7 @@ export default function Navbar() {
           </button>
           <button
             className={`btn ${classes["btn-signup"]}`}
-            onClick={() => history.push("/login")}
+            onClick={() => history.push("/signup")}
           >
             Sign Up
           </button>
