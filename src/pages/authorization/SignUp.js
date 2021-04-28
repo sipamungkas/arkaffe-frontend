@@ -1,29 +1,30 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./Login/Login.css";
+import "./login/Login.css";
 
 import InputForm from "../../components/inputform/InputForm";
 
-export class SignUp extends Component {constructor() {
+export class SignUp extends Component {
+  constructor() {
     super();
     this.state = {
       email: "",
       password: "",
-      phone: ""
+      phone: "",
     };
   }
 
-//   submitHandler = (e) => {
-//     e.preventDefault();
-//     const signup = {
-//       email: this.state.email,
-//       password: this.state.password,
-//       phone: this.state.phone,
-//     };
-//     if (!this.state.email || !this.state.password) {
-//       console.log("Empty Field");
-//     }
-//   };
+  //   submitHandler = (e) => {
+  //     e.preventDefault();
+  //     const signup = {
+  //       email: this.state.email,
+  //       password: this.state.password,
+  //       phone: this.state.phone,
+  //     };
+  //     if (!this.state.email || !this.state.password) {
+  //       console.log("Empty Field");
+  //     }
+  //   };
   render() {
     return (
       <>
@@ -170,4 +171,4 @@ export class SignUp extends Component {constructor() {
   }
 }
 
-export default SignUp
+export default SignUp;
