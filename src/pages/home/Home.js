@@ -3,6 +3,7 @@ import Stats from "../../components/home/Stats";
 import Featured from "../../components/home/Featured";
 import Pricing from "../../components/home/Pricing";
 import Location from "../../components/home/Location";
+import Partner from "../../components/home/Partner";
 
 // import classes from "./Home.module.css";
 
@@ -14,6 +15,7 @@ export default function Home() {
       <Featured />
       <Pricing />
       <Location />
+      <Partner />
     </main>
   );
 }
