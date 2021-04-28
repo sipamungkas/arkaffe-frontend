@@ -25,6 +25,7 @@
   min-height: 10px;
   border-radius: 50%;
   background-color: #dde0e4;
+  cursor: pointer;
 }
 
 .indicator.active {
@@ -44,11 +45,16 @@
   height: 3rem;
   border-radius: 50%;
   border: 2px solid #6a4029;
+  transition: all ease-in-out 0.3s;
 }
 
 .circle.active,
 .circle:hover {
   background-color: #6a4029;
+}
+
+.circle:hover {
+  cursor: pointer;
 }
 
 .arrow {
