@@ -12,10 +12,10 @@ export default function Featured() {
           />
         </div>
         <div className={classes["perks-container"]}>
-          <h2 className={classes.title}>
+          <h2 className="section-title">
             We Provide Good Coffee and Healthy Meals
           </h2>
-          <p className={classes.description}>
+          <p className="section-description">
             You can explore the menu that we provide with fun and have their own
             taste and make your day better.
           </p>

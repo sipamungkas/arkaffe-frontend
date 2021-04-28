@@ -12,23 +12,6 @@
   object-position: center;
 }
 
-.title {
-  font-family: Rubik;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 500;
-  text-align: left;
-  margin-bottom: 1rem;
-}
-
-.description {
-  font-family: Rubik;
-  font-size: 1rem;
-  font-weight: 400;
-  text-align: left;
-  color: #4f5665;
-}
-
 .perks {
   font-family: Rubik;
   font-size: 0.8rem;

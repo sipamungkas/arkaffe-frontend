@@ -1,0 +1,99 @@
+.pricing {
+  /* background-color: #fff; */
+
+  padding: 2rem 0;
+}
+
+/* .image-container {
+  
+  border-radius: 50%;
+} */
+
+.pricing-container {
+  overflow-y: scroll;
+}
+
+.scrollable {
+  display: flex;
+  white-space: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  white-space: nowrap;
+  overflow-y: hide;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  display: inline-flex;
+  flex-wrap: nowrap;
+}
+
+.pricing-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 2px solid #dddddd;
+  padding: 3rem 3rem;
+  border-radius: 10px;
+  background-color: #fff;
+  min-width: 18rem;
+  width: 18rem;
+  margin: 0 1rem;
+  transition: all ease-in-out 0.5s;
+  cursor: pointer;
+}
+
+.pricing-item:hover {
+  border-color: #6a4029;
+}
+
+.item-image {
+  height: 6rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+.title {
+  color: #0b132a;
+  font-family: Rubik;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+}
+
+.addons {
+  font-family: Rubik;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  color: #4f5665;
+}
+
+.checklist {
+  margin-right: 1rem;
+}
+
+.price {
+  font-family: Rubik;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+  color: #0b132a;
+}
+
+.btn-order {
+  border-radius: 50px;
+
+  padding: 0.6rem 2rem;
+  border: 2px solid #ffba33;
+}
+
+.pricing-item:hover > .btn-order {
+  background: #ffba33;
+}
