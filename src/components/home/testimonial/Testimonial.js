@@ -1,3 +1,5 @@
+import TestimonialItem from "./TestimonialItem";
+
 import classes from "./Testimonial.module.css";
 
 export default function Testimonial() {
@@ -12,6 +14,9 @@ export default function Testimonial() {
         These are the stories of our customers who have visited us with great
         pleasure.
       </p>
+      <div>
+        <TestimonialItem />
+      </div>
     </section>
   );
 }
