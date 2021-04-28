@@ -5,6 +5,7 @@ import Pricing from "../../components/home/pricing/Pricing";
 import Location from "../../components/home/location/Location";
 import Partner from "../../components/home/partner/Partner";
 import TestimonialList from "../../components/home/testimonial/TestimonialList";
+import Cta from "../../components/home/cta/Cta";
 
 // import classes from "./Home.module.css";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <Location />
       <Partner />
       <TestimonialList />
+      <Cta />
     </main>
   );
 }
