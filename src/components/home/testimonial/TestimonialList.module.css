@@ -10,7 +10,7 @@
 }
 
 .wrapper {
-  min-width: 33%;
+  min-width: 100%;
 }
 
 .indicator-container {
@@ -71,4 +71,22 @@
 
 .rotate-180 {
   transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    min-width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrapper {
+    min-width: 33.3%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    min-width: 27.5%;
+  }
 }
