@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
+import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import "./index.css";
 import App from "./App";
 
