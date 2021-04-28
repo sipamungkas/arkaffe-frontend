@@ -2,7 +2,7 @@ import TestimonialItem from "./TestimonialItem";
 
 import classes from "./Testimonial.module.css";
 
-export default function Testimonial() {
+export default function TestimonialList() {
   return (
     <section className={`container ${classes.testimonial}`}>
       <h2 className="section-title text-center">
