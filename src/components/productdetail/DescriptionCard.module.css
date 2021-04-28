@@ -1,0 +1,99 @@
+.desc-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 5rem;
+    background-color: white;
+    border-radius: 2rem;
+}
+.delivery-text{
+    display: inline-flex;
+}
+.text-default{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #6A4029;
+}
+.text-props{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #6A4029;
+}
+.desc-product{
+    margin-top: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #6A4029;
+}
+.text-size{
+    text-align: center;
+    margin-top: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: black;
+}
+.btn-group{
+    align-self: center;
+    text-align: center;
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+.btn-r{
+    width: 4rem;
+    height: 4rem;
+    background-color: #F4F4F8;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #9F9F9F;
+}
+.btn-r:hover{
+    background-color: #FFBA33;
+    color: black;
+}
+.btn-l{
+    width: 4rem;
+    height: 4rem;
+    background-color: #F4F4F8;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #9F9F9F;
+}
+.btn-l:hover{
+    background-color: #FFBA33;
+    color: black;
+}
+.btn-xl{
+    width: 4rem;
+    height: 4rem;
+    background-color: #F4F4F8;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #9F9F9F;
+}
+.btn-xl:hover{
+    background-color: #FFBA33;
+    color: black;
+}
+.btn-xl:checked{
+    background-color: #FFBA33;
+    color: black;
+}
