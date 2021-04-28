@@ -7,6 +7,7 @@ import ForgotPassword from "./pages/authorization/forgot/ForgotPassword";
 import Home from "./pages/home/Home";
 import Product from "./pages/product/Product";
 import ProductDetail from "./pages/product/ProductDetail"
+import History from "./pages/history/History";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" exact component={Login}></Route>
         <Route path="/signup" component={SignUp}></Route>
         <Route path="/products" component={Product} />
+        <Route path="/history" component={History} />
         <Route path="/login/recover" component={ForgotPassword}></Route>
         <Route path="/product" component={Product}></Route>
         <Route path="/dev" component={ProductDetail}></Route>
