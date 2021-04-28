@@ -2,6 +2,7 @@ import Hero from "../../components/home/Hero";
 import Stats from "../../components/home/Stats";
 import Featured from "../../components/home/Featured";
 import Pricing from "../../components/home/Pricing";
+import Location from "../../components/home/Location";
 
 // import classes from "./Home.module.css";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <Stats />
       <Featured />
       <Pricing />
+      <Location />
     </main>
   );
 }
