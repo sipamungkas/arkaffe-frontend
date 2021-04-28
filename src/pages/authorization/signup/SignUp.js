@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./login/Login.css";
+import "../login/Login.css";
 
-import InputForm from "../../components/inputform/InputForm";
+import InputForm from "../../../components/inputform/InputForm";
 
 export class SignUp extends Component {
   constructor() {
@@ -25,6 +25,7 @@ export class SignUp extends Component {
   //       console.log("Empty Field");
   //     }
   //   };
+
   render() {
     return (
       <>
@@ -54,7 +55,7 @@ export class SignUp extends Component {
                 </span>
               </div>
               <form className="middle-section">
-                <h2>Sign Up</h2>
+                <h2 className="title">Sign Up</h2>
                 <InputForm
                   id={"email"}
                   type={"email"}

@@ -33,11 +33,17 @@ main.container-main {
   flex-direction: row;
   justify-content: space-between;
 }
+.text-arkaffe {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.text-arkaffe img {
+  margin-right: 1rem;
+}
 .btn.btn-signup {
   width: 8rem;
   height: auto;
   font-size: 1.1rem;
-  font-family: "Rubik";
   font-weight: 500;
   background-color: #ffba33;
   border-radius: 2rem;
@@ -55,11 +61,11 @@ main.container-main {
   padding-left: 4rem;
   padding-right: 4rem;
 }
-.middle-section h2 {
+.middle-section .title {
   margin-top: 5rem;
   margin-bottom: 2rem;
-  font-family: "Rubik";
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 800;
   color: #6a4029;
 }
 
@@ -73,7 +79,6 @@ main.container-main {
   border: 1px solid #4f5665;
   border-radius: 1rem;
   outline: none;
-  font-family: "Rubik";
   font-size: 1.4rem;
   font-weight: 400;
   color: #6a4029;
@@ -85,7 +90,7 @@ main.container-main {
 .form-group label span {
   position: relative;
   top: -2rem;
-  font-family: "Rubik";
+
   font-weight: 700;
   font-size: 1.2rem;
   color: #4f5665;
@@ -99,7 +104,7 @@ main.container-main {
   right: 3rem;
 }
 .form-group input::placeholder {
-  font-family: "Rubik";
+
   color: #9f9f9f;
 }
 
@@ -107,7 +112,6 @@ main.container-main {
   position: relative;
   text-align: start;
   margin-top: 1rem;
-  font-family: "Rubik";
   font-size: 1.3rem;
   font-weight: 700;
   color: #4f5665;
@@ -125,7 +129,6 @@ main.container-main {
   width: 100%;
   height: 4rem;
   background-color: #ffba33;
-  font-family: "Rubik";
   font-size: 1.4rem;
   font-weight: 700;
   color: #6a4029;
@@ -137,7 +140,7 @@ main.container-main {
   height: 4rem;
   margin-top: 2rem;
   background-color: white;
-  font-family: "Rubik";
+
   font-size: 1.2rem;
   font-weight: 700;
   color: #6a4029;
@@ -156,14 +159,7 @@ main.container-main {
   bottom: 0%;
   padding: 4rem;
 }
-.text-arkaffe {
-  font-size: 1.2rem;
-  font-family: "rubik";
-  font-weight: 700;
-}
-.text-arkaffe img {
-  margin-right: 1rem;
-}
+
 .popup {
   display: block;
   height:fit-content;
@@ -191,7 +187,7 @@ main.container-main {
   width: 15rem;
   height: 3.5rem;
   background-color: #ffba33;
-  font-family: "Rubik";
+
   font-size: 1rem;
   font-weight: 700;
   color: #6a4029;

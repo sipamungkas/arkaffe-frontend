@@ -52,7 +52,7 @@ export class Login extends Component {
                 </span>
               </div>
               <form className="middle-section">
-                <h2>Login</h2>
+                <h2 className="title">Login</h2>
                 <InputForm
                   id={"email"}
                   type={"email"}
@@ -72,7 +72,7 @@ export class Login extends Component {
                     this.setState({ password: e.target.value })
                   }
                 />
-                <Link to="/reset" className="link-reset">
+                <Link to="/login/recover" className="link-reset">
                   Forgot password?
                 </Link>
                 <div className="button-group">
