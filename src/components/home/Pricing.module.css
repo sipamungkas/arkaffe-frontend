@@ -4,13 +4,18 @@
   padding: 2rem 0;
 }
 
+.pricing ::-webkit-scrollbar {
+  display: none;
+}
+
 /* .image-container {
   
   border-radius: 50%;
 } */
 
 .pricing-container {
-  overflow-y: scroll;
+  overflow-x: scroll;
+  text-align: center;
 }
 
 .scrollable {
@@ -21,7 +26,6 @@
   align-items: center;
   padding: 15px;
   white-space: nowrap;
-  overflow-y: hide;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   display: inline-flex;
