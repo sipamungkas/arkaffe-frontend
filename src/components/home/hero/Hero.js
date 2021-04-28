@@ -10,7 +10,7 @@ export default function Hero() {
           "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('/assets/images/hero.png')",
       }}
     >
-      <div class={`container ${classes["hero-text"]}`}>
+      <div className={`container ${classes["hero-text"]}`}>
         <h1 className={classes["hero-title"]}>
           Start Your Day with Coffee and Good Meals
         </h1>
