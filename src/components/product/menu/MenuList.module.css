@@ -1,0 +1,32 @@
+.tab-container {
+}
+
+.tab-content {
+  font-family: Rubik;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 1rem;
+  color: rgba(159, 159, 159, 1);
+  cursor: pointer;
+  transition: all ease 0.15s;
+}
+
+.tab-content.active {
+  font-weight: 700;
+  color: rgba(106, 64, 41, 1);
+  border-bottom: 2px solid rgba(106, 64, 41, 1);
+}
+
+.menu-list {
+  padding: 1rem 1rem;
+}
+
+.menu-container {
+  padding: 5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 4rem 1.5rem;
+  flex-wrap: wrap;
+}

@@ -1,8 +1,13 @@
 .product {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .promo-container {
   width: 33%;
+}
+
+.menu {
+  width: 77%;
 }
