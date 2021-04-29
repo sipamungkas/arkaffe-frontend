@@ -27,3 +27,14 @@ margin-bottom: 2rem;
     font-size: 1.8rem;
     font-weight: 500;
 }
+@media (max-width: 1024px) {
+    .img-product{
+        width: 200px;
+    }
+    .title-product{
+        font-size: 2.5rem;
+    }
+    .price-product{
+        font-size: 1.5rem;
+    }
+  }

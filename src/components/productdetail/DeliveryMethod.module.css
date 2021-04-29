@@ -23,6 +23,8 @@
 .btn-dinein{
     width: 10rem;
     height: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     background-color: #F4F4F8;
     border: none;
     outline: none;
@@ -39,6 +41,8 @@
 .btn-delivery{
     width: 10rem;
     height: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     background-color: #F4F4F8;
     border: none;
     outline: none;
@@ -55,6 +59,8 @@
 .btn-pickup{
     width: 10rem;
     height: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     background-color: #F4F4F8;
     border: none;
     outline: none;
@@ -67,9 +73,6 @@
 .btn-pickup:hover{
     background-color: #FFBA33;
     color: black;
-}
-.input-group{
-    margin-bottom: 5rem;
 }
 .label-input{
     font-family: "Poppins",sans-serif;
@@ -92,8 +95,10 @@
     color: #6A4029;
 }
 small{
-    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
     font-family: "Poppins",sans-serif;
+    font-style: italic;
     font-size: 1rem;
     font-weight: 400;
     color: #9F9F9F;

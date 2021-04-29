@@ -32,23 +32,18 @@ export class SignUp extends Component {
         <main className="container-fluid container-main">
           <div className="row no-gutter">
             <div className="col-6 img-container">
-              <img
-                className="img-fluid img-display"
-                alt=""
-                src="/assets/images/img_auth.png"
-              ></img>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-6 login-container">
               <div className="upper-section">
                 <span className="upper-content">
-                  <div className="text-arkaffe">
+                  <Link className="text-arkaffe" to="/">
                     <img
                       alt="logo"
                       src="/assets/icons/icon_arkaffe.png"
                       style={{ width: "30px" }}
                     />
                     Arkaffe
-                  </div>
+                  </Link>
                   <Link to="/login" className="btn btn-signup">
                     Login
                   </Link>

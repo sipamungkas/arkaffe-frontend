@@ -35,8 +35,13 @@ main.container-main {
   justify-content: space-between;
 }
 .text-arkaffe {
+  align-self: center;
   font-size: 1.2rem;
   font-weight: 700;
+}
+.text-arkaffe:hover{
+  text-decoration: none;
+  color: inherit;
 }
 .text-arkaffe img {
   margin-right: 1rem;

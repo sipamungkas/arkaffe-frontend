@@ -19,7 +19,7 @@ export class ForgotPassword extends Component {
               <p className={classes["text-desc"]}>
                 Don't worry, we got your back!
               </p>
-              <div className={classes["form-group-email"]}>
+              <form className={classes["form-group-email"]}>
                 <input
                   className={classes["email-input"]}
                   type={"email"}
@@ -29,7 +29,7 @@ export class ForgotPassword extends Component {
                   }}
                 ></input>
                 <button className={classes["btn-send"]}>Send</button>
-              </div>
+              </form>
               <p className={classes["text-desc"]}>
                 Click here if you didn't receive any link in 2 minutes
               </p>
