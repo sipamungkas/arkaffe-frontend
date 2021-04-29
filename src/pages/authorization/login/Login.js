@@ -15,23 +15,26 @@ export class Login extends Component {
     };
   }
 
-componentDidMount(){
-  const {isLoggedIn} = this.props.loginReducer;
-  if (isLoggedIn) return this.props.history.replace("/products")
-}
-
-componentDidUpdate(prevProps){
-  const {isRejected, error, isLoggedIn} = this.props.loginReducer;
-  if (isLoggedIn){
-    return this.props.history.replace("/products")
+  componentDidMount() {
+    const { isLoggedIn } = this.props.loginReducer;
+    if (isLoggedIn) return this.props.history.replace("/products");
   }
-  if (prevProps !== this.props) {
-    if (isRejected) {
-      const errmessage = error?.response?.data?.message||error.message||"Internal Server Error";
-      return notify.show(errmessage, "error")
+
+  componentDidUpdate(prevProps) {
+    const { isRejected, error, isLoggedIn } = this.props.loginReducer;
+    if (isLoggedIn) {
+      return this.props.history.replace("/products");
+    }
+    if (prevProps !== this.props) {
+      if (isRejected) {
+        const errmessage =
+          error?.response?.data?.message ||
+          error.message ||
+          "Internal Server Error";
+        return notify.show(errmessage, "error");
+      }
     }
   }
-}
 
   submitHandler = (e) => {
     e.preventDefault();
@@ -40,24 +43,24 @@ componentDidUpdate(prevProps){
       password: this.state.password,
     };
     if (!auth.email || !auth.password) {
-      return notify.show("Email or Password can not be empty", "error")
+      return notify.show("Email or Password can not be empty", "error");
     }
-    this.props.onLoginHandler(auth)
+    this.props.onLoginHandler(auth);
   };
 
   render() {
-    console.log(this.state)
+    console.log(this.state);
     return (
       <>
         <main className="container-fluid container-main">
           <div className="row no-gutter">
             <Toaster />
             <div className="col-6 img-container">
-              <img
+              {/* <img
                 className="img-fluid img-display"
                 alt=""
                 src="/assets/images/img_auth.png"
-              ></img>
+              ></img> */}
             </div>
             <div className="col-sm-12 col-md-6 col-lg-6 login-container">
               <div className="upper-section">
@@ -92,9 +95,7 @@ componentDidUpdate(prevProps){
                   name={"password"}
                   placeHolder={"Enter your password"}
                   label={"Password :"}
-                  onChange={(e) =>
-                    this.setState({ password: e.target.value })
-                  }
+                  onChange={(e) => this.setState({ password: e.target.value })}
                 />
                 <Link to="/login/recover" className="link-reset">
                   Forgot password?
@@ -142,11 +143,11 @@ const mapStatetoProps = (state) => {
 const mapDispatchtoProps = (dispatch) => {
   return {
     onLoginHandler: (data) => {
-      dispatch(loginHandler(data))
-    }
-  }
-}
+      dispatch(loginHandler(data));
+    },
+  };
+};
 
-const connectedLogin = connect(mapStatetoProps, mapDispatchtoProps)(Login)
+const connectedLogin = connect(mapStatetoProps, mapDispatchtoProps)(Login);
 
 export default connectedLogin;
