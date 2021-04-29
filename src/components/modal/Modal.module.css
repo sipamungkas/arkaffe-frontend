@@ -1,0 +1,116 @@
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  max-height: 50vh;
+  height: 10rem;
+  min-height: 20vh;
+  min-width: 80vw;
+  width: 14rem;
+  z-index: 1032;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question {
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+}
+
+.btn-left {
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  border: 2px solid rgba(106, 64, 41, 1);
+  color: rgba(106, 64, 41, 1);
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.btn-right {
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  background-color: rgba(106, 64, 41, 1);
+  border: 2px solid rgba(106, 64, 41, 1);
+  color: white;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@media (max-width: 320px) {
+  .container {
+    min-width: 90vw;
+  }
+
+  .question {
+    font-size: 1.2rem;
+  }
+
+  .btn-left {
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .btn-right {
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 700;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-height: 50vh;
+    height: 10rem;
+    min-height: 20vh;
+    min-width: 50vw;
+    max-width: 20rem;
+    /* z-index: 5; */
+    padding: 1.3rem 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-height: 50vh;
+    height: 10rem;
+    min-height: 20vh;
+    min-width: 30vw;
+    width: 100rem;
+    /* z-index: 5; */
+    padding: 1.3rem 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding: 2rem;
+  }
+}
