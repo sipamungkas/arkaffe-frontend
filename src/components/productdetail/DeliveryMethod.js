@@ -25,8 +25,8 @@ function DeliveryMethod() {
             min="08:00"
             max="22:00" required
           />
-          <small>Office hour are 8am to 10pm</small>
       </div>
+      <small>Notes: office hour are 8am to 10pm</small>
     </div>
   );
 }
