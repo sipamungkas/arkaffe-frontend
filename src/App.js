@@ -19,7 +19,6 @@ function App() {
         <Route path="/products" component={Product} />
         <Route path="/history" component={History} />
         <Route path="/login/recover" component={ForgotPassword}></Route>
-        <Route path="/product" component={Product}></Route>
         <Route path="/dev" component={ProductDetail}></Route>
       </Switch>
     </Layout>
