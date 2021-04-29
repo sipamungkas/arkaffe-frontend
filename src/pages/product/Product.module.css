@@ -1,4 +1,8 @@
+.product {
+  display: flex;
+  flex-direction: row;
+}
+
 .promo-container {
-  position: relative;
-  height: 100%;
+  width: 33%;
 }

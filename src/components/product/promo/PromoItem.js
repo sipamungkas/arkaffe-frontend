@@ -5,8 +5,11 @@ export default function PromoItem(props) {
     <div
       className={`${classes.item} ${props.isActive ? classes.active : ""} ${
         props.isNext ? classes.next : ""
-      }`}
+      } ${props.isPrev ? classes.prev : ""}`}
     >
+      <div className={classes.edit}>
+        <img className={classes.pencil} src="/assets/icons/pencil.svg" alt="" />
+      </div>
       <div className={classes.content}>
         <img
           className={classes.image}

@@ -4,7 +4,7 @@ import classes from "./Product.module.css";
 
 export default function Product() {
   return (
-    <main>
+    <main className={`container ${classes.Product} `}>
       <aside className={classes["promo-container"]}>
         <Promo />
       </aside>
