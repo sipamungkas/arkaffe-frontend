@@ -3,8 +3,14 @@
   display: flex;
   align-items: center;
   margin: auto;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   z-index: 1;
   gap: 1.8rem;
+}
+
+@media (min-width: 768px) {
+  .history {
+    justify-content: flex-start;
+  }
 }

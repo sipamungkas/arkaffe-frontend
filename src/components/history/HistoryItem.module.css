@@ -63,8 +63,8 @@
 .circle,
 .circle-x {
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   padding: 0.5rem;
   background-color: rgba(106, 64, 41, 1);
   border-radius: 50%;
@@ -102,6 +102,12 @@
   }
   .title {
     width: 10rem;
+  }
+  .circle,
+  .circle-x {
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
 
