@@ -1,33 +1,57 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Toaster, { notify } from "react-notify-toast";
 import "./Login.css";
-
 import InputForm from "../../../components/inputform/InputForm";
+import { loginHandler } from "../../../redux/actions/Auth";
+import { connect } from "react-redux";
 
 export class Login extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       email: "",
       password: "",
     };
   }
 
-  // submitHandler = (e) => {
-  //   e.preventDefault();
-  //   const auth = {
-  //     email: this.state.email,
-  //     password: this.state.password,
-  //   };
-  //   if (!this.state.email || !this.state.password) {
-  //     console.log("Empty Field");
-  //   }
-  // };
+componentDidMount(){
+  const {isLoggedIn} = this.props.loginReducer;
+  if (isLoggedIn) return this.props.history.replace("/products")
+}
+
+componentDidUpdate(prevProps){
+  const {isRejected, error, isLoggedIn} = this.props.loginReducer;
+  if (isLoggedIn){
+    return this.props.history.replace("/products")
+  }
+  if (prevProps !== this.props) {
+    if (isRejected) {
+      const errmessage = error?.response?.data?.message||error.message||"Internal Server Error";
+      return notify.show(errmessage, "error")
+    }
+  }
+}
+
+  submitHandler = (e) => {
+    e.preventDefault();
+    const auth = {
+      email: this.state.email,
+      password: this.state.password,
+    };
+    if (!auth.email || !auth.password) {
+      return notify.show("Email or Password can not be empty", "error")
+    }
+    this.props.onLoginHandler(auth)
+  };
+
   render() {
+    console.log(this.state)
     return (
       <>
         <main className="container-fluid container-main">
           <div className="row no-gutter">
+            <Toaster />
             <div className="col-6 img-container">
               <img
                 className="img-fluid img-display"
@@ -51,14 +75,14 @@ export class Login extends Component {
                   </Link>
                 </span>
               </div>
-              <form className="middle-section">
+              <form className="middle-section" onSubmit={this.submitHandler}>
                 <h2 className="title">Login</h2>
                 <InputForm
                   id={"email"}
                   type={"email"}
                   placeHolder={"Enter your email address"}
                   label={"Email Address :"}
-                  onchangeHandler={(e) => {
+                  onChange={(e) => {
                     this.setState({ email: e.target.value });
                   }}
                 />
@@ -68,7 +92,7 @@ export class Login extends Component {
                   name={"password"}
                   placeHolder={"Enter your password"}
                   label={"Password :"}
-                  onchangeHandler={(e) =>
+                  onChange={(e) =>
                     this.setState({ password: e.target.value })
                   }
                 />
@@ -110,4 +134,19 @@ export class Login extends Component {
   }
 }
 
-export default Login;
+const mapStatetoProps = (state) => {
+  const { loginReducer } = state;
+  return { loginReducer };
+};
+
+const mapDispatchtoProps = (dispatch) => {
+  return {
+    onLoginHandler: (data) => {
+      dispatch(loginHandler(data))
+    }
+  }
+}
+
+const connectedLogin = connect(mapStatetoProps, mapDispatchtoProps)(Login)
+
+export default connectedLogin;
