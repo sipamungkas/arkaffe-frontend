@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import classes from "./Layout.module.css";
 
 export default function Layout(props) {
   const location = useLocation();
@@ -9,13 +10,15 @@ export default function Layout(props) {
   const isMatch = hidePath.some((path) => path.test(location.pathname));
 
   if (isMatch) {
-    return (<>
-    {props.children}
-    <Footer/>
-    </>);
+    return (
+      <>
+        {props.children}
+        <Footer />
+      </>
+    );
   }
   return (
-    <div>
+    <div className={classes.main}>
       <Navbar />
       {props.children}
       <Footer />
