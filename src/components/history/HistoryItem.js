@@ -1,6 +1,7 @@
 import classes from "./HistoryItem.module.css";
 
-export default function HistoryItem() {
+export default function HistoryItem(props) {
+  console.log(props);
   return (
     <div className={classes["history-item"]}>
       <img
@@ -14,7 +15,12 @@ export default function HistoryItem() {
         <p className={classes.description}>Delivered</p>
       </div>
       <div className={classes.actions}>
-        <div className={classes.circle}>
+        <div
+          className={classes.circle}
+          onClick={() => {
+            props.onDelete();
+          }}
+        >
           <img
             className={classes["action-image"]}
             src="/assets/icons/trash-icon.svg"

@@ -5,7 +5,7 @@ import classes from "./Navbar.module.css";
 export default function Navbar() {
   const history = useHistory();
   return (
-    <div className="bg-white fixed-top">
+    <div className="bg-white fixed-top w-100">
       <nav className="container navbar navbar-expand-lg navbar-light bg-white ">
         <Link className="navbar-brand" to="/">
           <img
