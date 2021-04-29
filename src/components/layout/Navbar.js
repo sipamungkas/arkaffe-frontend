@@ -29,22 +29,22 @@ export default function Navbar() {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mx-auto">
           <li className="nav-item active">
-            <Link className="nav-link" href="/">
+            <Link className="nav-link" to="/">
               Home <span className="sr-only">(current)</span>
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" href="/">
+            <Link className="nav-link" to="/products">
               Product
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" href="/">
+            <Link className="nav-link" to="/">
               Your Cart
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" href="/">
+            <Link className="nav-link" to="/history">
               History
             </Link>
           </li>
