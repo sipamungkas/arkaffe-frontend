@@ -1,3 +1,5 @@
+import EditPencil from "../../editPencil/EditPencil";
+
 import classes from "./PromoItem.module.css";
 
 export default function PromoItem(props) {
@@ -7,9 +9,7 @@ export default function PromoItem(props) {
         props.isNext ? classes.next : ""
       } ${props.isPrev ? classes.prev : ""}`}
     >
-      <div className={classes.edit}>
-        <img className={classes.pencil} src="/assets/icons/pencil.svg" alt="" />
-      </div>
+      <EditPencil />
       <div className={classes.content}>
         <img
           className={classes.image}
