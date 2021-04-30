@@ -63,10 +63,10 @@ export default function Detail() {
             <input
               id="birthDate"
               type="date"
-              value={displayName}
+              value={birthDate}
               placeholder="dd-mm-yyyy"
               className={classes.input}
-              onChange={(e) => setDisplayName(e.target.value)}
+              onChange={(e) => setBirthDate(e.target.value)}
             />
           </div>
           <div className={classes["form-group-right"]}>
@@ -77,6 +77,8 @@ export default function Detail() {
                 name="gender"
                 id=""
                 value="M"
+                checked={(e) => (e.target.value === gender ? true : false)}
+                onChange={(e) => setGender(e.target.value)}
               />
               <label className={`${classes.label} m-0`}>Male</label>
             </div>
@@ -87,6 +89,8 @@ export default function Detail() {
                 name="gender"
                 id=""
                 value="F"
+                checked={(e) => (e.target.value === gender ? true : false)}
+                onChange={(e) => setGender(e.target.value)}
               />
               <label className={`${classes.label} m-0`}>Female</label>
             </div>
