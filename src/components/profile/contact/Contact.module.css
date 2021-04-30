@@ -3,8 +3,69 @@
   border-radius: 5px;
   border-bottom: 10px solid rgba(106, 64, 41, 1);
   display: flex;
+  flex: 1;
   flex-direction: column;
   padding: 2rem;
   align-items: flex-start;
-  width: 75%;
+  position: relative;
+}
+
+.edit {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.title {
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  color: rgba(79, 86, 101, 1);
+}
+
+.content {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.label {
+  font-family: Poppins;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 500;
+  color: rgba(159, 159, 159, 1);
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1.5px solid rgba(159, 159, 159, 1);
+}
+
+.input:focus {
+  border-bottom: 1.5px solid rgba(0, 0, 0, 1);
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .form-group {
+    width: calc(50% - 1rem);
+  }
 }
