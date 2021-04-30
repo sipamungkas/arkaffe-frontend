@@ -1,0 +1,23 @@
+.profile {
+  padding: 5rem 0;
+}
+
+.title {
+  font-family: Rubik;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 500;
+  color: white;
+}
+
+.body {
+  margin: 1rem 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  margin: 5rem 0;
+}
