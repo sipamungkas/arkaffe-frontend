@@ -1,0 +1,38 @@
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 5rem;
+  background-color: #ededed;
+}
+.left-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 40%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 4rem;
+  background-color: #6A4029;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.text{
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.right-container {
+  display: block;
+  width: 70%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: white;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}

@@ -29,9 +29,9 @@ function DescriptionCard() {
         <p className={classes["text-default"]}>
           Delivery only on&nbsp;
         </p>
-        <p className={classes["text-props"]}>{deliveryDay()}</p>
+        <div className={classes["text-props"]}>{deliveryDay()}</div>
         <p className={classes["text-default"]}>&nbsp;at&nbsp;</p>
-        <p className={classes["text-props"]}>{deliveryTime()}</p>
+        <div className={classes["text-props"]}>{deliveryTime()}</div>
       </div>
       <div className={classes["desc-product"]}>{productDesc()}</div>
       <h4 className={classes["text-size"]}>Choose a size</h4>

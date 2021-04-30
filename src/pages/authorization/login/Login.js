@@ -14,7 +14,7 @@ export class Login extends Component {
       password: "",
     };
   }
-
+  
   componentDidMount() {
     const { isLoggedIn } = this.props.loginReducer;
     if (isLoggedIn) return this.props.history.replace("/products");
@@ -55,7 +55,7 @@ export class Login extends Component {
         <main className="container-fluid container-main">
           <div className="row no-gutter">
             <Toaster />
-            <div className="col-6 img-container">
+            <div className="col-6 img-container" style={{ backgroundImage: `url("/assets/images/img_auth.png")`}}>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-6 login-container">
               <div className="upper-section">

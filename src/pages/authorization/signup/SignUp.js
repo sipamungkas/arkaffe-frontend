@@ -31,7 +31,7 @@ export class SignUp extends Component {
       <>
         <main className="container-fluid container-main">
           <div className="row no-gutter">
-            <div className="col-6 img-container">
+            <div className="col-6 img-container" style={{ backgroundImage: `url("/assets/images/img_auth.png")`}}>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-6 login-container">
               <div className="upper-section">
