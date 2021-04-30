@@ -6,8 +6,9 @@ import SignUp from "./pages/authorization/signup/SignUp";
 import ForgotPassword from "./pages/authorization/forgot/ForgotPassword";
 import Home from "./pages/home/Home";
 import Product from "./pages/product/Product";
-import ProductDetail from "./pages/product/ProductDetail"
+import ProductDetail from "./pages/product/ProductDetail";
 import History from "./pages/history/History";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/history" component={History} />
         <Route path="/login/recover" component={ForgotPassword}></Route>
         <Route path="/dev" component={ProductDetail}></Route>
+        <Route path="/profile" component={Profile} />
       </Switch>
     </Layout>
   );
