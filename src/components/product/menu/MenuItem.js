@@ -8,9 +8,7 @@ export default function MenuItem() {
         src="/assets/images/promo1.png"
         alt="food 1"
       />
-      <h3 className={classes["menu-name"]}>
-        Veggie <br /> tomato <br /> mix
-      </h3>
+      <h3 className={classes["menu-name"]}>Veggie tomato mix</h3>
       <span className={"classes.price"}>IDR 34.000</span>
     </div>
   );

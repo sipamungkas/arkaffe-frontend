@@ -7,7 +7,7 @@ import classes from "./MenuList.module.css";
 export default function MenuList() {
   const [tab, setTab] = useState(0);
 
-  const tabList = ["Favorite Product", "Non Coffe", "Foods", "Foods", "Add-on"];
+  const tabList = ["Favorite Product", "Non Coffe", "Foods", "Add-on"];
 
   return (
     <section className={classes["menu-list"]}>

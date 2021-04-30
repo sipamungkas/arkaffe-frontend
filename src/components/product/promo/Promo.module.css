@@ -10,6 +10,8 @@
   overflow: hidden;
   height: 25rem;
   padding: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-coupon {
@@ -22,9 +24,21 @@
   font-size: 1rem;
   font-style: normal;
   font-weight: 700;
+  width: 15rem;
+  align-self: center;
 }
 
 .btn-coupon:hover {
   color: white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 768px) {
+  .promo-list {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    height: 25rem;
+    padding: 1rem;
+  }
 }

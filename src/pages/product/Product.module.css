@@ -1,13 +1,37 @@
 .product {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
 }
 
 .promo-container {
-  width: 33%;
+  width: 100%;
 }
 
 .menu {
-  width: 77%;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .product {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .promo-container {
+    width: 40%;
+  }
+  .menu {
+    width: 60%;
+  }
+}
+
+@media (min-width: 992px) {
+  .promo-container {
+    width: 33%;
+  }
+  .menu {
+    width: 67%;
+  }
 }

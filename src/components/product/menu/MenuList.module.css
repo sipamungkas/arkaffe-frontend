@@ -1,7 +1,7 @@
 .tab-container {
   display: flex;
   justify-content: space-between;
-  padding: 0 1.2rem;
+  overflow: scroll;
 }
 
 .tab-content {
@@ -10,10 +10,13 @@
   font-style: normal;
   font-weight: 400;
   text-align: center;
-  margin: 0 1rem;
+  margin: 0 0.5rem;
   color: rgba(159, 159, 159, 1);
   cursor: pointer;
-  transition: all ease 0.15s;
+  transition: all ease 0.1s;
+  width: 100%;
+  white-space: nowrap;
+  /* word-wrap: initial; */
 }
 
 .tab-content.active {
@@ -32,4 +35,13 @@
   flex-direction: row;
   gap: 4rem 1.5rem;
   flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .tab-container {
+    padding: 0 1.2rem;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
