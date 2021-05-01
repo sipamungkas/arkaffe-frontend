@@ -22,8 +22,11 @@ function App() {
         <Route path="/products/detail" component={ProductDetail} />
         <Route path="/history" component={History} />
         <Route path="/login/recover" component={ForgotPassword}></Route>
-        <Route path="/dev" component={Chat}></Route>
         <Route path="/profile" component={Profile} />
+
+
+        
+        <Route path="/dev" component={Chat}></Route>
       </Switch>
     </Layout>
   );

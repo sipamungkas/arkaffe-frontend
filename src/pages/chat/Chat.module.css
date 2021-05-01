@@ -1,5 +1,4 @@
 .main-container {
-  width: 100%;
   display: flex;
   flex-direction: row;
   padding: 5rem;
@@ -10,14 +9,15 @@
   flex-direction: column;
   align-content: center;
   width: 40%;
+  min-width: 300px;
   padding-left: 3rem;
   padding-right: 3rem;
-  padding-bottom: 4rem;
-  background-color: #6A4029;
+  padding-bottom: 3rem;
+  background-color: #6a4029;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
-.text{
+.text-desc {
   text-align: center;
   margin-top: 4rem;
   margin-bottom: 2rem;
@@ -30,9 +30,47 @@
 .right-container {
   display: block;
   width: 70%;
+  min-width: 300px;
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-bottom: 3rem;
   background-color: white;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
+}
+.roomchat-heading{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-family: "Poppins",sans-serif;
+  font-weight: 700;
+  color: #4F5665;
+}
+
+@media (max-width: 1024px) {
+  .left-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .text {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  @media (max-width: 768px) {
+    .main-container{
+      flex-direction: column;
+      padding: 2rem;
+      min-width: 425px;
+    }
+    .left-container {
+      width: 100%;
+      max-height: 425px;
+      border-radius: 1rem 1rem 0 0;
+      overflow-y: scroll;
+    }
+    .right-container{
+      width: 100%;
+      border-radius: 0 0 1rem 1rem;
+      overflow-y: scroll;
+    }
+  }
 }

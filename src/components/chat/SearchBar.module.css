@@ -1,11 +1,10 @@
 .form-group{
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .searchIcon{
-    position: absolute;
-    margin-left: 1.8rem;
-    margin-top: 1.3rem;
+    position: relative;
+    transform: translate(1.4rem, 2.6rem);
 }
 .search-bar{
     width: 100%;
