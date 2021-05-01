@@ -2,27 +2,27 @@ import React from "react";
 import classes from "./Chat.module.css";
 
 import SearchBar from "../../components/chat/SearchBar";
-import ChatStaff from "../../components/chat/ChatStaff";
-import ChatRoom from "../../components/chat/ChatRoom"
+import ChatRoomItem from "../../components/chat/ChatStaff";
+import ChatItem from "../../components/chat/ChatRoom"
 
-function Chat() {
+function ChatRoom() {
   return (
     <main className={classes["main-container"]}>
       <section className={classes["left-container"]}>
         <SearchBar />
         <p className={classes["text-desc"]}>Choose a staff you want to talk with</p>
-        <ChatStaff />
-        <ChatStaff />
-        <ChatStaff />
+        <ChatRoomItem />
+        <ChatRoomItem />
+        <ChatRoomItem />
       </section>
       <section className={classes["right-container"]}>
         <h3 className={classes["roomchat-heading"]}>Room Chat</h3>
-        <ChatRoom />
-        <ChatRoom />
-        <ChatRoom />
+        <ChatItem />
+        <ChatItem />
+        <ChatItem />
       </section>
     </main>
   );
 }
 
-export default Chat;
+export default ChatRoom;

@@ -1,7 +1,7 @@
 import React from "react";
-import classes from "./ChatRoomItem.module.css";
+import classes from "./ChatRoom.module.css";
 
-function ChatRoomItem() {
+function ChatItem() {
   return (
     <div className={classes["chat-container"]}>
       <img
@@ -13,8 +13,11 @@ function ChatRoomItem() {
           <p className={classes.name}>Jason</p>
           <p className={classes["recent-chat"]}>Hey jason, I can’t find the promo section. Can u tell me where is it?</p>
       </div>
+      <div className={classes.time}>
+          <small className={classes["timestamp"]}>02.34&nbsp;PM</small>
+      </div>
     </div>
   );
 }
 
-export default ChatRoomItem;
+export default ChatItem;

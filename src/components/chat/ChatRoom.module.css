@@ -1,0 +1,57 @@
+.chat-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid #6a4029;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+.image {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin: 0;
+  margin-right: 1rem;
+}
+.chat-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0;
+  color: #4f5665;
+}
+.recent-chat {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin: 0;
+  color: #4f5665;
+  text-overflow: ellipsis;
+}
+.time {
+  display: flex;
+  justify-content: flex-end;
+  width: 5rem;
+  height: 3rem;
+    margin-left: 1rem;
+}
+.timestamp {
+  color: #9f9f9f;
+}
+
+@media (max-width: 1024px) {
+  .chat-container {
+    margin: 0;
+  }
+}
