@@ -4,7 +4,7 @@
     align-content: center;
     text-align: center;
     width: 100%;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 .text-methods{
     font-family: "Poppins",sans-serif;
@@ -18,7 +18,7 @@
     width: 80%;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 .btn-dinein{
     width: 10rem;
