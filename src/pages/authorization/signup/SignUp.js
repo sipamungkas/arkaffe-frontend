@@ -1,37 +1,60 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../login/Login.css";
-
 import InputForm from "../../../components/inputform/InputForm";
 import PhoneInput from "react-phone-input-2";
+import { connect } from "react-redux";
+import { signupHandler } from "../../../redux/actions/Auth";
+import Toaster, { notify } from "react-notify-toast";
 
 export class SignUp extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       email: "",
       password: "",
       phone: "",
     };
+    this.timer = null
+  }
+  componentDidUpdate(prevProps) {
+    const { isRejected, error, isFulfilled } = this.props.signupReducer;
+    if (prevProps !== this.props) {
+      if (isRejected) {
+        const errmessage =
+          error?.response?.data?.message ||
+          error.message ||
+          "Internal Server Error";
+        return notify.show(errmessage, "error");
+      }
+    }
+    if (isFulfilled) {
+      notify.show("Register Success, Redirecting to Login Page", "success", 4000)
+      this.timer = setTimeout(()=> {
+        this.props.history.push("/login")
+      }, 5000)
+    }
   }
 
-  //   submitHandler = (e) => {
-  //     e.preventDefault();
-  //     const signup = {
-  //       email: this.state.email,
-  //       password: this.state.password,
-  //       phone: this.state.phone,
-  //     };
-  //     if (!this.state.email || !this.state.password) {
-  //       console.log("Empty Field");
-  //     }
-  //   };
+  submitHandler = (e) => {
+    e.preventDefault();
+    const signup = {
+      email: this.state.email,
+      password: this.state.password,
+      phone: this.state.phone,
+    };
+    if (!signup.email || !signup.password || !signup.phone) {
+      notify.show("Please fill out all form", "warning")
+    }
+    this.props.onSignupHandler(signup)
+  };
 
   render() {
     console.log(this.state);
     return (
       <>
         <main className="container-fluid container-main">
+          <Toaster />
           <div className="row no-gutter">
             <div
               className="col-6 img-container"
@@ -53,7 +76,7 @@ export class SignUp extends Component {
                   </Link>
                 </span>
               </div>
-              <form className="middle-section">
+              <form className="middle-section" onSubmit={this.submitHandler}>
                 <h2 className="title">Sign Up</h2>
                 <InputForm
                   id={"email"}
@@ -78,7 +101,7 @@ export class SignUp extends Component {
                   localization={"id"}
                   specialLabel="Phone :"
                   onlyCountries={["id"]}
-                  masks={{ id: "...-....-...."}}
+                  masks={{ id: "...-....-...." }}
                   placeholder="+62 *** **** ****"
                   onChange={(phone) => this.setState({ phone })}
                 />
@@ -111,62 +134,25 @@ export class SignUp extends Component {
               </div>
             </span>
           </div>
-          {/* <footer className="bottom-section">
-            <div className="row">
-              <div className="app-info">
-                <div className="app-name">
-                  <img
-                    alt="logo"
-                    src="/assets/icons/icon_arkaffe.png"
-                    style={{ width: "30px" }}
-                  ></img>
-                  Arkaffe Coffee Shop
-                </div>
-                <p className="app-description">
-                  Coffee Shop is a store that sells some good meals, and
-                  especially coffee. We provide high quality beans
-                </p>
-                <div className="app-social">
-                  <img
-                    alt="facebook"
-                    src="/assets/icons/icon_facebook.png"
-                    style={{ width: "30px" }}
-                  ></img>
-                  <img
-                    alt="twitter"
-                    src="/assets/icons/icon_twitter.png"
-                    style={{ width: "30px" }}
-                  ></img>
-                  <img
-                    alt="instagram"
-                    src="/assets/icons/icon_instagram.png"
-                    style={{ width: "30px" }}
-                  ></img>
-                </div>
-                <p className="app-trademark">@2021Arkaffe</p>
-              </div>
-              <div className="product-info">
-                <h4 className="info-title">Product</h4>
-                <p className="info-download">Download</p>
-                <p className="info-pricing">Pricing</p>
-                <p className="info-locations">Locations</p>
-                <p className="info-countries">Countries</p>
-                <p className="info-blog">Blog</p>
-              </div>
-              <div className="misc-info">
-                <h4 className="misc-title">Engage</h4>
-                <p className="misc-coffeeshop">Coffee Shop?</p>
-                <p className="misc-faq">FAQ</p>
-                <p className="misc-about">About Us</p>
-                <p className="misc-privacy">Privacy Policy</p>
-                <p className="misc-tos">Terms of Service</p>
-              </div>
-            </div>
-          </footer> */}
         </main>
       </>
     );
   }
 }
 
-export default SignUp;
+const mapStatetoProps = (state) => {
+  const { signupReducer } = state;
+  return { signupReducer };
+};
+
+const mapDispatchtoProps = (dispatch) => {
+  return {
+    onSignupHandler: (data) => {
+      dispatch(signupHandler(data));
+    },
+  };
+};
+
+const connectedSignUp = connect(mapStatetoProps, mapDispatchtoProps)(SignUp);
+
+export default connectedSignUp;

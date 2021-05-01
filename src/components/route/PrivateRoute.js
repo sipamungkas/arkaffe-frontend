@@ -8,7 +8,7 @@ function PrivateRoute({ authReducer, children, ...rest }) {
       {...rest}
       render=
       {({ location }) =>
-        authReducer.isLoggedIn ? children : <Redirect to={{ pathname: "/" }} />
+        authReducer.isLoggedin ? children : <Redirect to={{ pathname: "/" }} />
       }
     </Route>
   );

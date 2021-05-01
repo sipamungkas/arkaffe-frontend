@@ -25,8 +25,8 @@ export class Login extends Component {
     if (isLoggedIn) {
       return this.props.history.push("/products");
     }
-    if (prevProps !== this.props) {
-      if (isRejected) {
+    if (isRejected) {
+      if (prevProps.loginReducer !== this.props.loginReducer) {
         const errmessage =
           error?.response?.data?.message ||
           error.message ||
