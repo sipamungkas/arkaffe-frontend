@@ -8,25 +8,24 @@ import Home from "./pages/home/Home";
 import Product from "./pages/product/Product";
 import ProductDetail from "./pages/product/ProductDetail";
 import History from "./pages/history/History";
-import Chat from "./pages/chat/Chat";
 import Profile from "./pages/profile/Profile";
+import Chat from "./pages/chat/Chat";
+import ChatRoom from "./pages/chat/ChatRoom";
 
 function App() {
   return (
     <Layout>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/login" exact component={Login}></Route>
-        <Route path="/signup" component={SignUp}></Route>
+        <Route path="/login" exact component={Login} />
+        <Route path="/signup" component={SignUp} />
         <Route path="/products" exact component={Product} />
         <Route path="/products/detail" component={ProductDetail} />
         <Route path="/history" component={History} />
-        <Route path="/login/recover" component={ForgotPassword}></Route>
+        <Route path="/login/recover" component={ForgotPassword} />
         <Route path="/profile" component={Profile} />
-
-
-        
-        <Route path="/dev" component={Chat}></Route>
+        <Route path="/chat" exact component={Chat} />
+        <Route path="/chat/room" component={ChatRoom} />
       </Switch>
     </Layout>
   );

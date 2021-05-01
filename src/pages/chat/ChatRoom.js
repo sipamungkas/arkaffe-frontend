@@ -1,9 +1,10 @@
 import React from "react";
-import classes from "./Chat.module.css";
+import classes from "./ChatRoom.module.css";
 
 import SearchBar from "../../components/chat/SearchBar";
-import ChatRoomItem from "../../components/chat/ChatStaff";
-import ChatItem from "../../components/chat/ChatRoom"
+import ChatStaff from "../../components/chat/ChatStaff";
+import ChatItem from "../../components/chat/ChatItem"
+import ChatItem2 from "../../components/chat/ChatItem2"
 
 function ChatRoom() {
   return (
@@ -11,15 +12,14 @@ function ChatRoom() {
       <section className={classes["left-container"]}>
         <SearchBar />
         <p className={classes["text-desc"]}>Choose a staff you want to talk with</p>
-        <ChatRoomItem />
-        <ChatRoomItem />
-        <ChatRoomItem />
+        <ChatStaff />
+        <ChatStaff />
+        <ChatStaff />
       </section>
       <section className={classes["right-container"]}>
-        <h3 className={classes["roomchat-heading"]}>Room Chat</h3>
+        <h3 className={classes["roomchat-heading"]}>Jason</h3>
         <ChatItem />
-        <ChatItem />
-        <ChatItem />
+        <ChatItem2 />
       </section>
     </main>
   );
