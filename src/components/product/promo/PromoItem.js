@@ -9,7 +9,9 @@ export default function PromoItem(props) {
         props.isNext ? classes.next : ""
       } ${props.isPrev ? classes.prev : ""}`}
     >
-      <EditPencil />
+      <div className={classes.edit}>
+        <EditPencil />
+      </div>
       <div className={classes.content}>
         <img
           className={classes.image}

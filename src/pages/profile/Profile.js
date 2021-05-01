@@ -1,6 +1,8 @@
 import classes from "./Profile.module.css";
 import Avatar from "../../components/profile/avatar/Avatar";
 import Contact from "../../components/profile/contact/Contact";
+import Detail from "../../components/profile/detail/Detail";
+import Actions from "../../components/profile/actions/Actions";
 
 export default function Profile() {
   return (
@@ -15,6 +17,11 @@ export default function Profile() {
         <div className={classes.content}>
           <Avatar />
           <Contact />
+        </div>
+
+        <div className={classes.content}>
+          <Detail />
+          <Actions />
         </div>
       </div>
     </section>

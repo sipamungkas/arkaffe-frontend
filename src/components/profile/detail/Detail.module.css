@@ -25,16 +25,24 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content-left,
+.content-right {
+  flex-direction: column;
   width: 100%;
   margin-top: 2rem;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
 }
 
-.form-group {
+.form-group,
+.form-group-right {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -65,11 +73,19 @@
 
 @media (min-width: 768px) {
   .content {
+    display: flex;
     flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .content-left {
+    width: calc(70% - 1rem);
     gap: 2rem;
   }
 
-  .form-group {
-    width: calc(50% - 1rem);
+  .content-right {
+    width: 30%;
+    justify-content: flex-start;
   }
 }

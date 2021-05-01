@@ -1,7 +1,8 @@
 .edit {
-  position: absolute;
+  /* position: absolute;
   top: 1rem;
-  right: 1rem;
+  right: 1rem; */
+  position: relative;
   border-radius: 50%;
   height: 2rem;
   width: 2rem;
