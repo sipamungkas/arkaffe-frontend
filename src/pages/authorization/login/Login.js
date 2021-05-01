@@ -23,7 +23,7 @@ export class Login extends Component {
   componentDidUpdate(prevProps) {
     const { isRejected, error, isLoggedIn } = this.props.loginReducer;
     if (isLoggedIn) {
-      return this.props.history.replace("/products");
+      return this.props.history.push("/products");
     }
     if (prevProps !== this.props) {
       if (isRejected) {

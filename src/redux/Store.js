@@ -1,12 +1,19 @@
-import { createStore, applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { createStore, applyMiddleware, compose } from "redux";
+// import { composeWithDevTools } from "redux-devtools-extension";
 import persistStore from "redux-persist/lib/persistStore";
-import rpm from "redux-promise-middleware";
+// import rpm from "redux-promise-middleware";
 import rootReducer from "./Root";
+import ReduxThunk from "redux-thunk";
 
-const devtools = composeWithDevTools(applyMiddleware(rpm));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(rootReducer, devtools);
+// development mode
+let enhancers = composeEnhancers(applyMiddleware(ReduxThunk));
+
+if (process.env.NODE_ENV !== "development") {
+  enhancers = applyMiddleware(ReduxThunk);
+}
+const store = createStore(rootReducer, enhancers);
 
 const persistor = persistStore(store);
 

@@ -1,7 +1,7 @@
 import {
-  LOGIN_PENDING,
-  LOGIN_REJECTED,
-  LOGIN_FULFILLED,
+  SET_PENDING,
+  SET_ERROR,
+  SET_USER,
   LOGOUT,
 } from "../actions/ActionTypes";
 
@@ -16,13 +16,13 @@ const initialState = {
 export let loginReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-    case LOGIN_PENDING: {
+    case SET_PENDING: {
       return {
         ...state,
         isPending: true,
       };
     }
-    case LOGIN_REJECTED: {
+    case SET_ERROR: {
       return {
         ...state,
         isPending: false,
@@ -31,7 +31,7 @@ export let loginReducer = (state = initialState, action) => {
         error: payload,
       };
     }
-    case LOGIN_FULFILLED: {
+    case SET_USER: {
       return {
         ...state,
         isPending: false,
