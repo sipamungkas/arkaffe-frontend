@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../login/Login.css";
 
 import InputForm from "../../../components/inputform/InputForm";
+import PhoneInput from "react-phone-input-2";
 
 export class SignUp extends Component {
   constructor() {
@@ -27,12 +28,15 @@ export class SignUp extends Component {
   //   };
 
   render() {
+    console.log(this.state);
     return (
       <>
         <main className="container-fluid container-main">
           <div className="row no-gutter">
-            <div className="col-6 img-container" style={{ backgroundImage: `url("/assets/images/img_auth.png")`}}>
-            </div>
+            <div
+              className="col-6 img-container"
+              style={{ backgroundImage: `url("/assets/images/img_auth.png")` }}
+            ></div>
             <div className="col-sm-12 col-md-6 col-lg-6 login-container">
               <div className="upper-section">
                 <span className="upper-content">
@@ -56,7 +60,7 @@ export class SignUp extends Component {
                   type={"email"}
                   placeHolder={"Enter your email address"}
                   label={"Email Address :"}
-                  onchangeHandler={(e) => {
+                  onChange={(e) => {
                     this.setState({ email: e.target.value });
                   }}
                 />
@@ -66,19 +70,17 @@ export class SignUp extends Component {
                   name={"password"}
                   placeHolder={"Enter your password"}
                   label={"Password :"}
-                  onchangeHandler={(e) =>
-                    this.setState({ password: e.target.value })
-                  }
+                  onChange={(e) => this.setState({ password: e.target.value })}
                 />
-                <InputForm
-                  id={"phone"}
-                  type={"number"}
-                  name={"phone"}
-                  placeHolder={"Enter your phone number"}
-                  label={"Phone Number :"}
-                  onchangeHandler={(e) =>
-                    this.setState({ phone: e.target.value })
-                  }
+                <PhoneInput
+                  className="phone"
+                  country={"id"}
+                  localization={"id"}
+                  specialLabel="Phone :"
+                  onlyCountries={["id"]}
+                  masks={{ id: "...-....-...."}}
+                  placeholder="+62 *** **** ****"
+                  onChange={(phone) => this.setState({ phone })}
                 />
                 <div className="button-group">
                   <button type="submit" className="btn btn-login">
