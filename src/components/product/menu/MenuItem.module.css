@@ -58,6 +58,14 @@
   transform: scale(0.9) translateX(20%) translateY(20%);
 }
 
+@media (max-width: 424px) {
+  .menu-item {
+    min-width: 100%;
+    width: 100%;
+    padding: 1rem 0.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   .menu-item {
     min-width: 30%;
