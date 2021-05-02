@@ -1,15 +1,8 @@
-import {
-  SET_PENDING,
-  SET_ERROR,
-  SET_SUCCESS,
-  LOGOUT,
-} from "../actions/ActionTypes";
-
 const initialState = {
   isPending: false,
   isRejected: false,
   isFulfilled: false,
-  isLoggedIn:false,
+  isLoggedIn: false,
   result: {},
   user: {},
   error: {},
@@ -18,13 +11,13 @@ const initialState = {
 export let loginReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-    case SET_PENDING: {
+    case "LOGIN_PENDING": {
       return {
         ...state,
         isPending: true,
       };
     }
-    case SET_ERROR: {
+    case "LOGIN_ERROR": {
       return {
         ...state,
         isPending: false,
@@ -33,19 +26,23 @@ export let loginReducer = (state = initialState, action) => {
         error: payload,
       };
     }
-    case SET_SUCCESS: {
+    case "LOGIN_SUCCESS": {
       return {
         ...state,
         isPending: false,
         isRejected: false,
+        isFulfilled: true,
         isLoggedIn: true,
         user: payload,
       };
     }
-    case LOGOUT: {
+    case "LOGOUT": {
       return {
         ...state,
-        isFulfilled: false,
+        isPending: false,
+        isRejected: false,
+        isFulfilled: true,
+        isLoggedIn: false,
         user: {},
       };
     }
@@ -54,27 +51,27 @@ export let loginReducer = (state = initialState, action) => {
   }
 };
 export let signupReducer = (state = initialState, action) => {
-  const {type, payload} = action
+  const { type, payload } = action;
   switch (type) {
-    case SET_PENDING:
+    case "SIGNUP_PENDING":
       return {
         ...state,
         isPending: true,
         isRejected: false,
         isFulfilled: false,
       };
-    case SET_ERROR:
+    case "SIGNUP_ERROR":
       return {
         ...state,
         isRejected: true,
         isPending: false,
         error: payload,
       };
-    case SET_SUCCESS:
+    case "SIGNUP_SUCCESS":
       return {
         ...state,
         isPending: false,
-        isRejected:false,
+        isRejected: false,
         isFulfilled: true,
         result: payload,
       };

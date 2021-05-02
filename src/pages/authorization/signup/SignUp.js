@@ -4,7 +4,7 @@ import "../login/Login.css";
 import InputForm from "../../../components/inputform/InputForm";
 import PhoneInput from "react-phone-input-2";
 import { connect } from "react-redux";
-import { signupHandler } from "../../../redux/actions/Auth";
+import { signupHandler, logoutHandler } from "../../../redux/actions/Auth";
 import Toaster, { notify } from "react-notify-toast";
 
 export class SignUp extends Component {
@@ -48,6 +48,10 @@ export class SignUp extends Component {
     }
     this.props.onSignupHandler(signup)
   };
+
+  logoutHandler = (e) => {
+    this.props.onLogoutHandler()
+  }
 
   render() {
     console.log(this.state);
@@ -128,7 +132,7 @@ export class SignUp extends Component {
                 <p>Let's join with our member and enjoy the deals.</p>
               </div>
               <div className="button-popup">
-                <button type="button" className="btn btn-member">
+                <button type="button" className="btn btn-member" onClick={this.logoutHandler}>
                   Create Now
                 </button>
               </div>
@@ -150,6 +154,9 @@ const mapDispatchtoProps = (dispatch) => {
     onSignupHandler: (data) => {
       dispatch(signupHandler(data));
     },
+    onLogoutHandler: () => {
+      dispatch(logoutHandler())
+    }
   };
 };
 
