@@ -44,7 +44,7 @@ export class SignUp extends Component {
       phone: this.state.phone,
     };
     if (!signup.email || !signup.password || !signup.phone) {
-      notify.show("Please fill out all form", "warning")
+      notify.show("Please Fill Out All Form", "warning")
     }
     this.props.onSignupHandler(signup)
   };
