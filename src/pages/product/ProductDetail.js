@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./ProductDetail.module.css";
-import BreadCrumb from "../../components/productdetail/BreadCrumb";
+import BreadCrumb from "../../components/breadcrumb/BreadCrumb";
 import ProductInfo from "../../components/productdetail/ProductInfo";
 import ButtonGroup from "../../components/productdetail/ButtonGroup";
 import DescriptionCard from "../../components/productdetail/DescriptionCard";

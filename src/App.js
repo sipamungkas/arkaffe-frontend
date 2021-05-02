@@ -11,6 +11,7 @@ import History from "./pages/history/History";
 import Profile from "./pages/profile/Profile";
 import Chat from "./pages/chat/Chat";
 import ChatRoom from "./pages/chat/ChatRoom";
+import NewProduct from "./pages/product/NewProduct";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/signup" component={SignUp} />
         <Route path="/products" exact component={Product} />
         <Route path="/products/detail" component={ProductDetail} />
+        <Route path="/products/new" component={NewProduct} />
         <Route path="/history" component={History} />
         <Route path="/login/recover" component={ForgotPassword} />
         <Route path="/profile" component={Profile} />
