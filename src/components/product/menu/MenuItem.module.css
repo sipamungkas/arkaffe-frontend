@@ -1,4 +1,5 @@
 .menu-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,6 +48,14 @@
   font-style: normal;
   font-weight: 700;
   text-align: center;
+}
+
+.edit {
+  position: absolute;
+  bottom: 0rem;
+  right: 0rem;
+
+  transform: scale(0.9) translateX(20%) translateY(20%);
 }
 
 @media (min-width: 768px) {

@@ -37,6 +37,24 @@
   flex-wrap: wrap;
 }
 
+.btn-new-product {
+  padding: 1rem 2rem;
+  background-color: rgba(106, 64, 41, 1);
+  color: white;
+  border-radius: 10px;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  width: 100%;
+  align-self: center;
+}
+
+.btn-new-product:hover {
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
 @media (min-width: 768px) {
   .tab-container {
     padding: 0 1.2rem;

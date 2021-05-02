@@ -14,7 +14,8 @@
   justify-content: center;
 }
 
-.btn-coupon {
+.btn-coupon,
+.add-new-promo {
   margin: 1rem 2rem;
   padding: 1rem 2rem;
   background-color: rgba(106, 64, 41, 1);
@@ -28,9 +29,35 @@
   align-self: center;
 }
 
-.btn-coupon:hover {
+.add-new-promo {
+  padding: 1.5rem 2rem;
+  background-color: rgba(255, 186, 51, 1);
+  color: rgba(106, 64, 41, 1);
+  font-family: Poppins;
+  font-size: 1.2rem;
+}
+
+.btn-coupon:hover,
+.add-new-promo:hover {
   color: white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.toc {
+  margin-top: 3rem;
+  font-family: Rubik;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 700;
+  text-align: left;
+}
+
+.toc-content {
+  font-family: Rubik;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
 }
 
 @media (min-width: 768px) {

@@ -37,6 +37,9 @@ export default function MenuList() {
         <MenuItem />
         <MenuItem />
       </div>
+      <button className={`btn ${classes["btn-new-product"]}`}>
+        Add New Product
+      </button>
     </section>
   );
 }
