@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./ProductDescription.module.css";
 
 function ProductDescription() {
+  const [R, setR] = useState(false);
+  const [L, setL] = useState(false);
+
+  const onclickHandler = (e) => {
+    let {name, checked} = e.target
+    
+  };
+  console.log(R)
+
   return (
     <>
       <main className={classes["productdesc-container"]}>
@@ -11,7 +20,7 @@ function ProductDescription() {
             className={classes["input"]}
             type="text"
             name="productname"
-            placeHolder="Type product name min. 50 characters"
+            placeholder="Type product name min. 50 characters"
             // onChange={(e) => }
           />
           <label className={classes["label"]}>Category :</label>
@@ -28,7 +37,7 @@ function ProductDescription() {
             className={classes["input"]}
             type="number"
             name="productname"
-            placeHolder="Type the price"
+            placeholder="Type the price"
             // onChange={(e) => }
           />
           <label className={classes["label"]}>Description :</label>
@@ -36,7 +45,7 @@ function ProductDescription() {
             className={` ${classes["input"]} ${classes["text-area"]}`}
             type="text"
             name="productname"
-            placeHolder="Describe your product min. 150 characters"
+            placeholder="Describe your product min. 150 characters"
             // onChange={(e) => }
           />
           <label className={classes["label"]}>Input product size :</label>
@@ -46,29 +55,29 @@ function ProductDescription() {
           <div className={classes["product-size"]}>
             <div className={classes["drink-size"]}>
               <label className={`${classes["option"]}`}>
-                <input type="checkbox" />
+                <input type="checkbox" name="R" onChange={onclickHandler} />
                 <span className={classes["text-size"]}>R</span>
               </label>
               <label className={`${classes["option"]}`}>
-                <input type="checkbox" />
+                <input type="checkbox" name="L" onChange={onclickHandler}/>
                 <span className={classes["text-size"]}>L</span>
               </label>
               <label className={`${classes["option"]}`}>
-                <input type="checkbox" />
+                <input type="checkbox" name="XL" onChange={onclickHandler}/>
                 <span className={classes["text-size"]}>XL</span>
               </label>
             </div>
             <div className={classes["food-size"]}>
               <label className={`${classes["option"]}`}>
-                <input type="checkbox" />
+                <input type="checkbox" name="250" onChange={onclickHandler}/>
                 <span className={classes["text-size2"]}>250 gr</span>
               </label>
               <label className={`${classes["option"]}`}>
-                <input type="checkbox" />
+                <input type="checkbox" name="300" onChange={onclickHandler}/>
                 <span className={classes["text-size2"]}>300 gr</span>
               </label>
               <label className={`${classes["option"]}`}>
-                <input type="checkbox" />
+                <input type="checkbox" name="500" onChange={onclickHandler}/>
                 <span className={classes["text-size2"]}>500 gr</span>
               </label>
             </div>
@@ -92,8 +101,12 @@ function ProductDescription() {
             </label>
           </div>
           <div className={classes["btn-group"]}>
-              <button className={classes["btn-submit"]} type="submit">Save Product</button>
-              <button className={classes["btn-cancel"]} type="">Cancel</button>
+            <button className={classes["btn-submit"]} type="submit">
+              Save Product
+            </button>
+            <button className={classes["btn-cancel"]} type="">
+              Cancel
+            </button>
           </div>
         </form>
       </main>
