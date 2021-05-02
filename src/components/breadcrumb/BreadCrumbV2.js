@@ -5,9 +5,9 @@ function BreadCrumb(props) {
   return (
     <div>
       <p className={classes.breadcrumb}>
-        {" "}
         {props.path.map(
-          (text, index) => `${text} ${index < props.path.length ? " > " : ""} `
+          (text, index) =>
+            `${text} ${index < props.path.length - 1 ? " > " : ""} `
         )}
       </p>
     </div>
