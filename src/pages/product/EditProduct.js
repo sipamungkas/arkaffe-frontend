@@ -1,11 +1,13 @@
 import { useState } from "react";
+
 import BreadCrumb from "../../components/breadcrumb/BreadCrumbV2";
+import Modal from "../../components/modal/Modal";
 
 import classes from "./EditProduct.module.css";
 
 export default function EditProduct() {
   const [qty, setQty] = useState(0);
-
+  const [prompt, setPrompt] = useState(false);
   const subQtyHandler = () => {
     if (qty === 0) return;
     setQty(qty - 1);
@@ -28,6 +30,13 @@ export default function EditProduct() {
           <div className={classes.delivery}>
             Delivery only on <strong>Monday to friday</strong> at{" "}
             <strong>1 - 7 pm</strong>
+          </div>
+          <div className={classes.circle} onClick={() => setPrompt(true)}>
+            <img
+              className={classes["action-image"]}
+              src="/assets/icons/trash-icon-chocolate.svg"
+              alt="delete"
+            />
           </div>
         </div>
 
@@ -72,6 +81,15 @@ export default function EditProduct() {
           <button className={`btn ${classes["save"]}`}>Save Change</button>
         </div>
       </div>
+      {prompt && (
+        <Modal
+          question="Are you sure want to delete this product?"
+          onLeftClick={() => setPrompt(false)}
+          leftBtnText="Cancel"
+          onRightClick={() => setPrompt(false)}
+          rightBtnText={"Delete"}
+        />
+      )}
     </section>
   );
 }
