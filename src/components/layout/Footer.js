@@ -3,8 +3,8 @@ import classes from "./Footer.module.css";
 export default function Footer() {
   return (
     <div className="bg-white">
-      <footer className="container d-flex justify-content-between">
-        <div className="w-25">
+      <footer className={`container ${classes.footer}`}>
+        <div className={classes["first-section"]}>
           <div className={classes.logo}>
             <img
               className={classes["brand-logo"]}
@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
           <span>©2020CoffeeStore</span>
         </div>
-        <div className="w-50 d-flex text-right justify-content-end">
+        <div className={classes["second-section"]}>
           <div className={classes.product}>
             <p className={classes.title}>Product</p>
             <div className="d-flex flex-column justify-content-between">

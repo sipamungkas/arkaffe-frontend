@@ -1,8 +1,23 @@
-footer {
+.footer {
   display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
   flex: 1;
   padding: 1rem;
   margin-top: 1rem;
+}
+
+.first-section {
+  width: 100%;
+}
+
+.second-section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  text-align: left;
+  justify-content: space-between;
 }
 
 .logo {
@@ -42,4 +57,28 @@ a {
   text-decoration: none;
   color: black;
   font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .first-section {
+    width: 25%;
+  }
+
+  .second-section {
+    width: 50%;
+    text-align: right;
+    justify-content: flex-end;
+    /* w-50 d-flex text-right justify-content-end */
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    width: 100%;
+  }
 }
