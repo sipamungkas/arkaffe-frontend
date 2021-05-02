@@ -12,6 +12,7 @@ import Profile from "./pages/profile/Profile";
 import Chat from "./pages/chat/Chat";
 import ChatRoom from "./pages/chat/ChatRoom";
 import NewProduct from "./pages/product/NewProduct";
+import EditProduct from "./pages/product/EditProduct";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/products" exact component={Product} />
         <Route path="/products/detail" component={ProductDetail} />
         <Route path="/products/new" component={NewProduct} />
+        <Route path="/products/edit" component={EditProduct} />
         <Route path="/history" component={History} />
         <Route path="/login/recover" component={ForgotPassword} />
         <Route path="/profile" component={Profile} />
