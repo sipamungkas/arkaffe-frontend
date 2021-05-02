@@ -25,6 +25,10 @@
   object-position: center;
 }
 
+.delivery {
+  margin-top: 2rem;
+}
+
 .product {
   width: 100%;
   display: flex;
@@ -173,6 +177,8 @@
   .image-container {
     min-width: 40%;
     width: 40%;
+    min-height: 35rem;
+    max-height: 35rem;
   }
 
   .product {

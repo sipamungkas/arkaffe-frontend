@@ -25,7 +25,12 @@ export default function EditProduct() {
             src="/assets/images/products1.png"
             alt="product 1"
           />
+          <div className={classes.delivery}>
+            Delivery only on <strong>Monday to friday</strong> at{" "}
+            <strong>1 - 7 pm</strong>
+          </div>
         </div>
+
         <div className={classes.product}>
           <input type="text" className={classes.title} value={`Cold Brew`} />
           <input type="text" className={classes.price} value={` IDR 30.000`} />
