@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import classes from "./RightInput.module.css";
 
 function RightInput() {
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
   const [sizes, setSizes] = useState([]);
 
   const onclickHandler = (e) => {
@@ -18,7 +20,7 @@ function RightInput() {
       setSizes(newData);
     }
   };
-
+  console.log(price);
   console.log(sizes);
   return (
     <>
@@ -35,10 +37,19 @@ function RightInput() {
           <label className={classes["label"]}>Normal Price :</label>
           <input
             className={classes["input"]}
-            type="number"
+            type="text"
             name="price"
+            value={price}
             placeholder="Type the price"
-            // onChange={(e) => }
+            onChange={(e) => {
+              const input = e.target.value;
+              if (
+                input.charCodeAt(input.length - 1) < 48 ||
+                input.charCodeAt(input.length - 1) > 57
+              )
+                return;
+              else return setPrice(input);
+            }}
           />
           <label className={classes["label"]}>Description :</label>
           <textarea
