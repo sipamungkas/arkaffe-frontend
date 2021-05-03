@@ -15,6 +15,7 @@ import NewProduct from "./pages/product/NewProduct";
 import EditProduct from "./pages/product/EditProduct";
 import Checkout from "./pages/checkout/Checkout";
 import ManageOrder from "./pages/manageOrder/ManageOrder";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/chat/room" component={ChatRoom} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/manage-order" component={ManageOrder} />
+        <Route path="/dashboard" component={Dashboard} />
       </Switch>
     </Layout>
   );
