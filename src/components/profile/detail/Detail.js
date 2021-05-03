@@ -82,28 +82,32 @@ export default function Detail(props) {
           </div>
           <div className={classes["form-group-right"]}>
             <div className="d-flex align-items-center ">
-              <input
-                className={`mr-2`}
-                type="radio"
-                name="gender"
-                id=""
-                value="L"
-                checked={"L" === gender ? true : false}
-                onChange={(e) => setGender(e.target.value)}
-              />
-              <label className={`${classes.label} m-0`}>Male</label>
+              <label className={`${classes.label} m-0`}>
+                <input
+                  className={`mr-2`}
+                  type="radio"
+                  name="gender"
+                  id=""
+                  value="L"
+                  checked={"L" === gender ? true : false}
+                  onChange={(e) => setGender(e.target.value)}
+                />
+                Male
+              </label>
             </div>
             <div className="d-flex align-items-center ">
-              <input
-                className={`mr-2`}
-                type="radio"
-                name="gender"
-                id=""
-                value="P"
-                checked={"P" === gender ? true : false}
-                onChange={(e) => setGender(e.target.value)}
-              />
-              <label className={`${classes.label} m-0`}>Female</label>
+              <label className={`${classes.label} m-0`}>
+                <input
+                  className={`mr-2`}
+                  type="radio"
+                  name="gender"
+                  id=""
+                  value="P"
+                  checked={"P" === gender ? true : false}
+                  onChange={(e) => setGender(e.target.value)}
+                />
+                Female
+              </label>
             </div>
           </div>
         </div>
