@@ -1,0 +1,18 @@
+.logged-in {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.image {
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+  object-position: center;
+  object-fit: cover;
+}
+
+.circle {
+  border-radius: 50%;
+}

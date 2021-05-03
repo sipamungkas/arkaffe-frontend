@@ -1,8 +1,11 @@
 import { useHistory, Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import classes from "./Navbar.module.css";
+import LoggedIn from "./LoggedIn";
 
-export default function Navbar() {
+function Navbar(props) {
+  const { isLoggedIn } = props.loginReducer;
   const history = useHistory();
   return (
     <div className="bg-white fixed-top w-100">
@@ -50,22 +53,35 @@ export default function Navbar() {
               </Link>
             </li>
           </ul>
-          <div className={classes["button-container"]}>
-            <button
-              className={`btn ${classes["btn-login"]}`}
-              onClick={() => history.push("/login")}
-            >
-              Login
-            </button>
-            <button
-              className={`btn ${classes["btn-signup"]}`}
-              onClick={() => history.push("/signup")}
-            >
-              Sign Up
-            </button>
-          </div>
+          {isLoggedIn ? (
+            <LoggedIn />
+          ) : (
+            <div className={classes["button-container"]}>
+              <button
+                className={`btn ${classes["btn-login"]}`}
+                onClick={() => history.push("/login")}
+              >
+                Login
+              </button>
+              <button
+                className={`btn ${classes["btn-signup"]}`}
+                onClick={() => history.push("/signup")}
+              >
+                Sign Up
+              </button>
+            </div>
+          )}
         </div>
       </nav>
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    loginReducer: state.loginReducer,
+  };
+};
+
+const ConnectedNavbar = connect(mapStateToProps)(Navbar);
+export default ConnectedNavbar;
