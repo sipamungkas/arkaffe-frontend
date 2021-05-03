@@ -1,0 +1,29 @@
+.chart {
+  position: relative;
+  padding: 2rem;
+}
+
+.title {
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  text-align: left;
+}
+
+.duration {
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  color: rgba(124, 130, 138, 1);
+}
+
+.more {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  max-height: 1rem;
+  cursor: pointer;
+}
