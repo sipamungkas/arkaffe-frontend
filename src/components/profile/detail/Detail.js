@@ -1,15 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import EditPencil from "../../editPencil/EditPencil";
 
 import classes from "./Detail.module.css";
 
-export default function Detail() {
+export default function Detail(props) {
+  const { user } = props;
+
   const [displayName, setDisplayName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [birthDate, setBirthDate] = useState("");
-  const [gender, setGender] = useState("M");
+  const [gender, setGender] = useState("L");
+
+  useEffect(() => {
+    setDisplayName(user.display_name);
+    setFirstName(user.first_name);
+    setLastName(user.last_name);
+    setBirthDate(user.birthday);
+    setGender(user.gender);
+  }, [user]);
+
   return (
     <div className={classes.card}>
       <span className={classes.title}>Details</span>
@@ -76,8 +87,8 @@ export default function Detail() {
                 type="radio"
                 name="gender"
                 id=""
-                value="M"
-                checked={(e) => (e.target.value === gender ? true : false)}
+                value="L"
+                checked={"L" === gender ? true : false}
                 onChange={(e) => setGender(e.target.value)}
               />
               <label className={`${classes.label} m-0`}>Male</label>
@@ -88,8 +99,8 @@ export default function Detail() {
                 type="radio"
                 name="gender"
                 id=""
-                value="F"
-                checked={(e) => (e.target.value === gender ? true : false)}
+                value="P"
+                checked={"P" === gender ? true : false}
                 onChange={(e) => setGender(e.target.value)}
               />
               <label className={`${classes.label} m-0`}>Female</label>
