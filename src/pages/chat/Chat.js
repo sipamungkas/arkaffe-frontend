@@ -5,7 +5,7 @@ import SearchBar from "../../components/chat/SearchBar";
 import ChatStaff from "../../components/chat/ChatStaff";
 import ChatRoom from "../../components/chat/ChatRoom"
 
-function Chat() {
+function Chat(props) {
   return (
     <main className={classes["main-container"]}>
       <section className={classes["left-container"]}>
