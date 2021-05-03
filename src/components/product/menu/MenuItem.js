@@ -3,13 +3,18 @@ import EditPencil from "../../editPencil/EditPencil";
 import classes from "./MenuItem.module.css";
 
 export default function MenuItem(props) {
-  let {product} = props
+  let { product, user } = props;
   const BASE_URL = process.env.REACT_APP_API;
   return (
     <div className={classes["menu-item"]}>
-      <div className={classes.edit}>
-        <EditPencil />
-      </div>
+      {user.role === 1 ? (
+        <div className={classes.edit}>
+          <EditPencil />
+        </div>
+      ) : (
+        ""
+      )}
+
       <img
         className={classes.image}
         src={`${BASE_URL}${product.image_product}`}

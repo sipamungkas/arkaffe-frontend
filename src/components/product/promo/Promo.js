@@ -1,8 +1,10 @@
 import PromoItem from "./PromoItem";
+import { connect } from "react-redux";
 
 import classes from "./Promo.module.css";
 
-export default function Promo() {
+function Promo(props) {
+  const { user } = props.loginReducer;
   return (
     <section className={`container ${classes.promo}`}>
       <h2 className="section-title text-center m-0">Promo for you</h2>
@@ -11,9 +13,9 @@ export default function Promo() {
       </p>
       <div className={classes["promo-list"]}>
         {/* <div className="w-100"> */}
-        <PromoItem isActive={true} />
-        <PromoItem isPrev={false} isNext={true} />
-        <PromoItem isPrev={true} isNext={false} />
+        <PromoItem isActive={true} user={user} />
+        <PromoItem isPrev={false} isNext={true} user={user} />
+        <PromoItem isPrev={true} isNext={false} user={user} />
         {/* <PromoItem isNext={true} /> */}
       </div>
       <button className={`btn ${classes["btn-coupon"]}`}>Apply Coupon</button>
@@ -24,10 +26,21 @@ export default function Promo() {
         <li>Buy 1 get 1 only for new user</li>
         <li>Should make member card to apply coupon</li>
       </ol>
-
-      <button className={`btn ${classes["add-new-promo"]}`}>
-        Add new promo
-      </button>
+      {user.role === 1 ? (
+        <button className={`btn ${classes["add-new-promo"]}`}>
+          Add new promo
+        </button>
+      ) : (
+        ""
+      )}
     </section>
   );
 }
+const mapStatetoProps = (state) => {
+  return {
+    loginReducer: state.loginReducer,
+  };
+};
+const connectedPromo = connect(mapStatetoProps)(Promo);
+
+export default connectedPromo;

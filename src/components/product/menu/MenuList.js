@@ -1,11 +1,11 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import MenuItem from "./MenuItem";
 import classes from "./MenuList.module.css";
 import { connect } from "react-redux";
 
 function MenuList(props) {
-  const token = props.loginReducer.user.token
+  const token = props.loginReducer.user.token;
   let [tab, setTab] = useState(1);
   let [productlist, setProductList] = useState([]);
   const BASE_URL = process.env.REACT_APP_API;
@@ -23,7 +23,7 @@ function MenuList(props) {
       currentTab = tabList[currentTab];
     }
     axios(`${BASE_URL}/product?category=${currentTab}`, {
-      headers: { Authorization: `Bearer ${token}`}
+      headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
         setProductList(res.data.data);
@@ -35,7 +35,7 @@ function MenuList(props) {
 
   useEffect(() => {
     getProduct();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentTab]);
 
   return (
@@ -55,12 +55,20 @@ function MenuList(props) {
       </div>
       <div className={classes["menu-container"]}>
         {productlist.map((product, index) => (
-          <MenuItem key={index} product={product} />
+          <MenuItem
+            key={index}
+            product={product}
+            user={props.loginReducer.user}
+          />
         ))}
       </div>
-      <button className={`btn ${classes["btn-new-product"]}`}>
-        Add New Product
-      </button>
+      {props.loginReducer.user === 1 ? (
+        <button className={`btn ${classes["btn-new-product"]}`}>
+          Add New Product
+        </button>
+      ) : (
+        ""
+      )}
     </section>
   );
 }
@@ -70,6 +78,6 @@ const mapStatetoProps = (state) => {
     loginReducer: state.loginReducer,
   };
 };
-const connectedMenuList = connect(mapStatetoProps)(MenuList)
+const connectedMenuList = connect(mapStatetoProps)(MenuList);
 
-export default connectedMenuList
+export default connectedMenuList;
