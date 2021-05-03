@@ -1,0 +1,77 @@
+.order-list {
+  position: relative;
+  min-height: 55rem;
+  min-width: 35%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  position: absolute;
+  padding: 2rem 2rem;
+  background-color: white;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+  min-height: 35rem;
+  transition: all ease-in-out 0.5s;
+  opacity: 0;
+  transform: scale(1.1) translateY(-30%);
+}
+
+.card.active {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  z-index: 2;
+}
+
+.card.next {
+  z-index: 1;
+  opacity: 1;
+  transform: scale(0.95) translateY(10%);
+}
+.card.second {
+  z-index: 0;
+  opacity: 1;
+  transform: scale(0.85) translateY(25%);
+}
+
+.swipe-up {
+  margin-top: 1rem;
+  color: white;
+  padding: 1rem 2rem;
+  background-color: #ffba33;
+  color: rgba(106, 64, 41, 1);
+  border-radius: 10px;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  width: 15rem;
+  align-self: center;
+  width: 100%;
+}
+.swipe-up img {
+  margin-left: 1rem;
+}
+
+@media (min-width: 375px) {
+  .order-list {
+    min-height: 50rem;
+    min-width: 35%;
+  }
+}
+
+@media (min-width: 425px) {
+  .order-list {
+    min-height: 48rem;
+    min-width: 35%;
+  }
+}
+
+@media (min-width: 768px) {
+  .order-list {
+    min-height: 45rem;
+    min-width: 35%;
+  }
+}

@@ -14,7 +14,7 @@ import ChatRoom from "./pages/chat/ChatRoom";
 import NewProduct from "./pages/product/NewProduct";
 import EditProduct from "./pages/product/EditProduct";
 import Checkout from "./pages/checkout/Checkout";
-import NewPromo from "./pages/promo/NewPromo"
+import ManageOrder from "./pages/manageOrder/ManageOrder";
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
         <Route path="/chat" exact component={Chat} />
         <Route path="/chat/room" component={ChatRoom} />
         <Route path="/checkout" component={Checkout} />
-        <Route path="/promo/new" component={NewPromo}/>
+        <Route path="/manage-order" component={ManageOrder} />
       </Switch>
     </Layout>
   );
