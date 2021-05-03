@@ -62,7 +62,7 @@ function MenuList(props) {
           />
         ))}
       </div>
-      {props.loginReducer.user === 1 ? (
+      {props.loginReducer.user.role === 1 ? (
         <button className={`btn ${classes["btn-new-product"]}`}>
           Add New Product
         </button>
