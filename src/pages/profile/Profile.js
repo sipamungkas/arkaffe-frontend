@@ -9,6 +9,8 @@ import Contact from "../../components/profile/contact/Contact";
 import Detail from "../../components/profile/detail/Detail";
 import Actions from "../../components/profile/actions/Actions";
 
+import { logoutHandler } from "../../redux/actions/Auth";
+
 const BASE_URL = process.env.REACT_APP_API;
 
 function Profile(props) {
@@ -27,6 +29,22 @@ function Profile(props) {
       .catch((err) => notify.show(err.message, "error"));
   }, [token]);
 
+  function logout() {
+    axios
+      .post(
+        `${BASE_URL}/auth/logout`,
+        {},
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((res) => {
+        notify.show(res.data.message, "success");
+        props.onLogoutHandler();
+      })
+      .catch((err) => notify.show(err.message, "error"));
+  }
+
   return (
     <section
       style={{
@@ -35,6 +53,7 @@ function Profile(props) {
       }}
     >
       <Toaster />
+
       <div className={`container ${classes.profile}`}>
         <h2 className={classes.title}>User Profile</h2>
         <div className={classes.content}>
@@ -44,12 +63,18 @@ function Profile(props) {
 
         <div className={classes.content}>
           <Detail user={user} />
-          <Actions user={user} />
+          <Actions user={user} logout={logout} />
         </div>
       </div>
     </section>
   );
 }
+
+const mapDispatchtoProps = (dispatch) => {
+  return {
+    onLogoutHandler: () => dispatch(logoutHandler()),
+  };
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -57,5 +82,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-const ConnectedProfile = connect(mapStateToProps)(Profile);
+const ConnectedProfile = connect(mapStateToProps, mapDispatchtoProps)(Profile);
 export default ConnectedProfile;

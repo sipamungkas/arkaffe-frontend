@@ -4,7 +4,7 @@ import Layout from "./components/layout/Layout";
 import Login from "./pages/authorization/login/Login";
 import SignUp from "./pages/authorization/signup/SignUp";
 import ForgotPassword from "./pages/authorization/forgot/ForgotPassword";
-import ResetPassword from "./pages/authorization/forgot/ResetPassword"
+import ResetPassword from "./pages/authorization/forgot/ResetPassword";
 import Home from "./pages/home/Home";
 import Product from "./pages/product/Product";
 import ProductDetail from "./pages/product/ProductDetail";
@@ -17,24 +17,35 @@ import EditProduct from "./pages/product/EditProduct";
 import Checkout from "./pages/checkout/Checkout";
 import ManageOrder from "./pages/manageOrder/ManageOrder";
 import Dashboard from "./pages/dashboard/Dashboard";
-import NewPromo from "./pages/promo/NewPromo"
-import EditPromo from "./pages/promo/EditPromo"
+import NewPromo from "./pages/promo/NewPromo";
+import EditPromo from "./pages/promo/EditPromo";
+import PrivateRoute from "./components/route/PrivateRouteV2";
 
 function App() {
   return (
     <Layout>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/login" exact component={Login} />
+        <PrivateRoute
+          path="/login"
+          exact
+          protect={"isLoggedIn"}
+          redirectTo={"/products"}
+        >
+          <Login />
+        </PrivateRoute>
+        {/* <Route path="/login" exact component={Login} /> */}
         <Route path="/signup" component={SignUp} />
         <Route path="/login/recover" component={ForgotPassword} />
-        <Route path="/login/reset" component={ResetPassword}/>
+        <Route path="/login/reset" component={ResetPassword} />
         <Route path="/products" exact component={Product} />
         <Route path="/products/detail" component={ProductDetail} />
         <Route path="/products/new" component={NewProduct} />
         <Route path="/products/edit" component={EditProduct} />
         <Route path="/history" component={History} />
-        <Route path="/profile" component={Profile} />
+        <PrivateRoute path="/profile" redirectTo={"/login"}>
+          <Profile />
+        </PrivateRoute>
         <Route path="/chat" exact component={Chat} />
         <Route path="/chat/room" component={ChatRoom} />
         <Route path="/checkout" component={Checkout} />
