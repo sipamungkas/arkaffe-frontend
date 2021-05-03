@@ -2,7 +2,9 @@ import EditPencil from "../../editPencil/EditPencil";
 
 import classes from "./MenuItem.module.css";
 
-export default function MenuItem() {
+export default function MenuItem(props) {
+  let {product} = props
+  const BASE_URL = process.env.REACT_APP_API;
   return (
     <div className={classes["menu-item"]}>
       <div className={classes.edit}>
@@ -10,11 +12,11 @@ export default function MenuItem() {
       </div>
       <img
         className={classes.image}
-        src="/assets/images/promo1.png"
+        src={`${BASE_URL}${product.image_product}`}
         alt="food 1"
       />
-      <h3 className={classes["menu-name"]}>Veggie tomato mix</h3>
-      <span className={"classes.price"}>IDR 34.000</span>
+      <h3 className={classes["menu-name"]}>{product.name}</h3>
+      <span className={"classes.price"}>{`IDR ${product.price}`}</span>
     </div>
   );
 }

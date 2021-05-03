@@ -1,8 +1,10 @@
+
 import React, { useState } from "react";
 import classes from "./ProductDescription.module.css";
 
-function ProductDescription() {
+function ProductDescription(props) {
   const [sizes, setSizes] = useState([]);
+  const [coba, setCoba] = useState("")
 
   const onclickHandler = (e) => {
     if (sizes.includes(e.target.value)) {
@@ -19,7 +21,12 @@ function ProductDescription() {
     }
   };
 
-  console.log(sizes);
+  const onSubmitHandler = () => {
+    props.data([coba, sizes])
+  }
+
+  // console.log(sizes);
+  console.log(coba)
   return (
     <>
       <main className={classes["productdesc-container"]}>
@@ -30,7 +37,7 @@ function ProductDescription() {
             type="text"
             name="productname"
             placeholder="Type product name min. 50 characters"
-            // onChange={(e) => }
+            onChange={(e) => setCoba(e.target.value)}
           />
           <label className={classes["label"]}>Category :</label>
           <select
@@ -140,7 +147,7 @@ function ProductDescription() {
             </label>
           </div>
           <div className={classes["btn-group"]}>
-            <button className={classes["btn-submit"]} type="submit">
+            <button className={classes["btn-submit"]} type="button" onClick={onSubmitHandler}>
               Save Product
             </button>
             <button className={classes["btn-cancel"]} type="">

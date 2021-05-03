@@ -1,13 +1,42 @@
-import { useState } from "react";
-
+import { useState, useEffect} from "react";
+import axios from "axios";
 import MenuItem from "./MenuItem";
-
 import classes from "./MenuList.module.css";
+import { connect } from "react-redux";
 
-export default function MenuList() {
-  const [tab, setTab] = useState(0);
+function MenuList(props) {
+  const token = props.loginReducer.user.token
+  let [tab, setTab] = useState(1);
+  let [productlist, setProductList] = useState([]);
+  const BASE_URL = process.env.REACT_APP_API;
+  const tabList = [
+    "Favorite Product",
+    "Coffee",
+    "Non Coffee",
+    "Foods",
+    "Add-on",
+  ];
+  let currentTab = tab;
 
-  const tabList = ["Favorite Product", "Non Coffe", "Foods", "Add-on"];
+  let getProduct = () => {
+    if (currentTab) {
+      currentTab = tabList[currentTab];
+    }
+    axios(`${BASE_URL}/product?category=${currentTab}`, {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+      .then((res) => {
+        setProductList(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getProduct();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentTab]);
 
   return (
     <section className={classes["menu-list"]}>
@@ -25,17 +54,9 @@ export default function MenuList() {
         ))}
       </div>
       <div className={classes["menu-container"]}>
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
+        {productlist.map((product, index) => (
+          <MenuItem key={index} product={product} />
+        ))}
       </div>
       <button className={`btn ${classes["btn-new-product"]}`}>
         Add New Product
@@ -43,3 +64,12 @@ export default function MenuList() {
     </section>
   );
 }
+
+const mapStatetoProps = (state) => {
+  return {
+    loginReducer: state.loginReducer,
+  };
+};
+const connectedMenuList = connect(mapStatetoProps)(MenuList)
+
+export default connectedMenuList
