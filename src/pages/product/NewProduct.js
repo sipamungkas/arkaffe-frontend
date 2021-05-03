@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import classes from "./NewProduct.module.css";
 import ProductPicture from "../../components/product/newproduct/leftsection/ProductPicture";
 import DeliveryStock from "../../components/product/newproduct/leftsection/DeliveryStock"
@@ -6,12 +6,13 @@ import BreadCrumb from "../../components/breadcrumb/BreadCrumbV2";
 import ProductDescription from "../../components/product/newproduct/rightsection/ProductDescription";
 
 function NewProduct() {
+ const [picture, setPicture] = useState("")
   return (
     <>
       <main className={classes["main-container"]}>
         <section className={classes["left-container"]}>
           <BreadCrumb path={["Products", "New"]}/>
-          <ProductPicture />
+          <ProductPicture picture={setPicture}/>
           <DeliveryStock/>
         </section>
         <section className={classes["right-container"]}>

@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../login/Login.css";
 import InputForm from "../../../components/inputform/InputForm";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 // import { signupHandler, logoutHandler } from "../../../redux/actions/Auth";
-import Toaster, { notify } from "react-notify-toast";
+// import Toaster, { notify } from "react-notify-toast";
 
 export class ResetPassword extends Component {
   constructor(props) {
@@ -56,7 +56,7 @@ export class ResetPassword extends Component {
     return (
       <>
         <main className="container-fluid container-main">
-          <Toaster />
+          {/* <Toaster /> */}
           <div className="row no-gutter">
             <div
               className="col-6 img-container"
