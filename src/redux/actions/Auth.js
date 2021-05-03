@@ -40,6 +40,25 @@ export function signupHandler(data) {
   };
 }
 
+export function resetHandler(data) {
+  return (dispatch) => {
+    dispatch({
+      type: "RESET_PENDING",
+    });
+    axios
+      .post(`${BASE_URL}/auth/reset`, data)
+      .then((res) => {
+        dispatch({ type: "RESET_SUCCESS", payload: res.data });
+      })
+      .catch((err) => {
+        dispatch({
+          type: "RESET_ERROR",
+          payload: err,
+        });
+      });
+  };
+}
+
 export function logoutHandler() {
   return (dispatch) => {
     dispatch({ type: "LOGOUT" });
