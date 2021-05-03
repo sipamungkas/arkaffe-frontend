@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect} from "react";
 import axios from "axios";
 import MenuItem from "./MenuItem";
 import classes from "./MenuList.module.css";
@@ -31,6 +31,7 @@ export default function MenuList() {
 
   useEffect(() => {
     getProduct();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentTab]);
 
   return (
