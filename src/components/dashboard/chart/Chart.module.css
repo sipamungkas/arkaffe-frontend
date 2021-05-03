@@ -21,9 +21,16 @@
 }
 
 .more {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  max-height: 1rem;
-  cursor: pointer;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .more {
+    position: absolute;
+    display: block;
+    top: 2rem;
+    right: 2rem;
+    max-height: 1rem;
+    cursor: pointer;
+  }
 }

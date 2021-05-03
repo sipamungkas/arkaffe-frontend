@@ -1,6 +1,8 @@
 import Chart from "../../components/dashboard/chart/Chart";
+import BestStaff from "../../components/dashboard/bestStaff/BestStaff";
 
 import classes from "./Dashboard.module.css";
+import Goals from "../../components/dashboard/goals/Goals";
 
 export default function Dashboard() {
   return (
@@ -24,10 +26,26 @@ export default function Dashboard() {
           </div>
         </div>
         <div className={classes.content}>
-          <div className={`${classes["card"]} ${classes["chart-wrapper"]}`}>
-            <Chart />
+          <div className={classes["left-wrapper"]}>
+            <div className={`${classes["card"]} ${classes["chart-wrapper"]}`}>
+              <Chart />
+            </div>
+            <button className={`btn ${classes["btn-share"]}`}>
+              Download Report
+            </button>
           </div>
-          <div className={classes["right-wrapper"]}>circle</div>
+
+          <div className={classes["right-wrapper"]}>
+            <div className={`${classes.card} `}>
+              <BestStaff />
+            </div>
+            <div className={`${classes.card} `}>
+              <Goals />
+            </div>
+            <button className={`btn ${classes["btn-share"]}`}>
+              Share Report
+            </button>
+          </div>
         </div>
       </section>
     </div>
