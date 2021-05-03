@@ -21,8 +21,7 @@ function RightInput() {
       setSizes(newData);
     }
   };
-  console.log(price);
-  console.log(sizes);
+  console.log(name, discount, price);
   return (
     <>
       <main className={classes["promo-container"]}>
