@@ -1,0 +1,145 @@
+.checkout {
+  padding: 2rem 1rem;
+}
+
+.content {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 1rem 0;
+  color: white;
+}
+
+.card {
+  padding: 2rem 2rem;
+  background-color: white;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+  min-height: 40rem;
+}
+
+.card-title {
+  text-align: center;
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  /* margin: 2rem 0; */
+  color: black;
+}
+
+.right-side {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.right-side .card {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  min-height: 0;
+}
+
+.right-title {
+  color: white;
+}
+
+.btn-confirm {
+  padding: 1rem 2rem;
+  background-color: rgba(106, 64, 41, 1);
+  color: white;
+  border-radius: 10px;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  width: 15rem;
+  align-self: center;
+  width: 100%;
+}
+
+.btn-confirm:hover {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+  color: white;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+.cc-container,
+.bank-container,
+.delivery-container {
+  position: relative;
+  background-color: rgba(244, 123, 10, 1);
+  height: 2.5rem;
+  width: 3rem;
+  border-radius: 5px;
+}
+
+.bank-container {
+  background: linear-gradient(0deg, #895537, #895537),
+    linear-gradient(0deg, #c4c4c4, #c4c4c4);
+}
+
+.delivery-container {
+  background: linear-gradient(0deg, #ffba33, #ffba33),
+    linear-gradient(0deg, #c4c4c4, #c4c4c4);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 768px) {
+  .checkout {
+    padding: 4rem 0;
+  }
+
+  .content {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 2rem 2rem;
+    width: 49%;
+  }
+
+  .right-side {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    padding: 2rem 2rem;
+    width: 45%;
+  }
+
+  .right-side .card {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 1rem 2rem;
+    min-height: 0;
+  }
+}

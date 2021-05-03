@@ -13,6 +13,7 @@ import Chat from "./pages/chat/Chat";
 import ChatRoom from "./pages/chat/ChatRoom";
 import NewProduct from "./pages/product/NewProduct";
 import EditProduct from "./pages/product/EditProduct";
+import Checkout from "./pages/checkout/Checkout";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/profile" component={Profile} />
         <Route path="/chat" exact component={Chat} />
         <Route path="/chat/room" component={ChatRoom} />
+        <Route path="/checkout" component={Checkout} />
       </Switch>
     </Layout>
   );
