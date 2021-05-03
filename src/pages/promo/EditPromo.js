@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./EditPromo.module.css";
 import BreadCrumb from "../../components/breadcrumb/BreadCrumbV2";
-import ProductPicture from "../../components/product/newproduct/leftsection/ProductPicture"
 import LeftInput from "../../components/product/promo/editpromo/LeftInput"
 import RightInput from "../../components/product/promo/editpromo/RightInput";
 import PromoCard from "../../components/product/promo/editpromo/PromoCard";
