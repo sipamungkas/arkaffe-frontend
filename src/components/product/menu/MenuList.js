@@ -4,23 +4,24 @@ import MenuItem from "./MenuItem";
 import classes from "./MenuList.module.css";
 
 export default function MenuList() {
-  const [tab, setTab] = useState(0);
-  const [productlist, setProductList] = useState([])
+  let [tab, setTab] = useState(1);
+  let [productlist, setProductList] = useState([])
   const BASE_URL = process.env.REACT_APP_API;
   const tabList = ["Favorite Product", "Coffee", "Non Coffee", "Foods", "Add-on"];
   const getProduct = () => {
-    const currentTab = 0
-    if(currentTab === 0){
-      currentTab = ""
-    }
-    axios(`${BASE_URL}/product?category=${tab}`)
+    let currentTab = tab
+    if(currentTab){
+      currentTab = tabList[currentTab]
+    } 
+    console.log(currentTab)
+    axios(`${BASE_URL}/product?category=${currentTab}`)
     .then((res)=> {
-      console.log(res)
+      console.log(res.data)
     })
   }
 
   useEffect(() => {
-    console.log(tab[1])
+console.log(getProduct())
   })
 
 

@@ -7,6 +7,10 @@ import ProductDescription from "../../components/product/newproduct/rightsection
 
 function NewProduct() {
  const [picture, setPicture] = useState("")
+ const [data, setData] = useState([])
+ console.log(data)
+
+//  FormData.append("name", data[0])
   return (
     <>
       <main className={classes["main-container"]}>
@@ -16,7 +20,7 @@ function NewProduct() {
           <DeliveryStock/>
         </section>
         <section className={classes["right-container"]}>
-          <ProductDescription />
+          <ProductDescription data={setData}/>
         </section>
       </main>
     </>
