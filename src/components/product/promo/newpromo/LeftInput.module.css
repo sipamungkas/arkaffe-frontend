@@ -1,0 +1,231 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  margin-top: 2rem;
+  width: 100%;
+  align-items: center;
+}
+
+.text-discount {
+  width: 65%;
+  min-width: 18rem;
+  margin-top: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #6a4029;
+}
+.text-discount::placeholder {
+  color: #9f9f9f;
+}
+.input-group-discount {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 65%;
+  min-width: 18rem;
+  padding: 0 1rem 0 1rem;
+  border: 2px solid #9f9f9f;
+  border-radius: 1rem;
+}
+.label-discount {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  width: 65%;
+  margin: 0;
+  margin-right: 1rem;
+  color: #9f9f9f;
+}
+.input-discount {
+  align-self: center;
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  outline: none;
+  color: #6a4029;
+}
+.label-discount-percent {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  margin-left: 1rem;
+  color: #9f9f9f;
+}
+.text-expire {
+  width: 65%;
+  min-width: 18rem;
+  margin-top: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #6a4029;
+}
+.input-group-expire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 65%;
+  min-width: 18rem;
+}
+.input-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  padding: 0 1rem 0 1rem;
+  border: 2px solid #9f9f9f;
+  border-radius: 1rem;
+}
+
+.label-start {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  width: 21%;
+  margin: 0;
+  color: #9f9f9f;
+}
+.date-start {
+  height: 3rem;
+  border: none;
+  outline: none;
+  width: 79%;
+  background-color: transparent;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #6a4029;
+}
+.input-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  margin-top: 1rem;
+  padding: 0 1rem 0 1rem;
+  border: 2px solid #9f9f9f;
+  border-radius: 1rem;
+}
+.label-end {
+  width: fit-content;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  width: 21%;
+  font-weight: 400;
+  margin: 0;
+  margin-right: 1rem;
+  color: #9f9f9f;
+}
+.date-end {
+  height: 3rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+width: 79%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #6a4029;
+}
+.text-coupon {
+  width: 65%;
+  min-width: 18rem;
+  margin-top: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #6a4029;
+}
+.text-coupon::placeholder {
+  color: #9f9f9f;
+}
+.input-group-coupon {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 65%;
+  min-width: 18rem;
+  padding: 0 1rem 0 1rem;
+  border: 2px solid #9f9f9f;
+  border-radius: 1rem;
+}
+.label-coupon {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  width: 48%;
+  margin: 0;
+  color: #9f9f9f;
+}
+.input-coupon {
+  align-self: center;
+  height: 4rem;
+  text-align: center;
+  width: 52%;
+  border: none;
+  outline: none;
+  color: #6a4029;
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .btn-camera {
+    font-size: 1rem;
+    height: 3rem;
+    width: 100%;
+  }
+  .btn-gallery {
+    font-size: 1rem;
+    height: 3rem;
+    width: 100%;
+  }
+  .text-expire {
+    width: 100%;
+  }
+  .input-group-expire {
+    width: 100%;
+  }
+  .input-start {
+    height: 3rem;
+  }
+  .label-start {
+    font-size: 1rem;
+  }
+  .input-end {
+    height: 3rem;
+  }
+  .label-end {
+    font-size: 1rem;
+  }
+  .text-discount {
+    width: 100%;
+  }
+  .input-group-discount {
+    width: 100%;
+  }
+  .input-discount {
+    width: 100%;
+    height: 3rem;
+  }
+  .text-coupon {
+    width: 100%;
+  }
+  .input-group-coupon {
+    width: 100%;
+  }
+  .input-coupon {
+    width: 100%;
+    height: 3rem;
+  }
+}

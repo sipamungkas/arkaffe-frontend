@@ -64,7 +64,7 @@ export class SignUp extends Component {
               className="col-6 img-container"
               style={{ backgroundImage: `url("/assets/images/img_auth.png")` }}
             ></div>
-            <div className="col-sm-12 col-md-6 col-lg-6 login-container">
+            <div className="login-container">
               <div className="upper-section">
                 <span className="upper-content">
                   <Link className="text-arkaffe" to="/">

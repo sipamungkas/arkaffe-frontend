@@ -4,10 +4,6 @@ import { connect } from "react-redux";
 
 function ButtonGroup(props) {
   const role = props.loginReducer.user.role;
-  console.log(role)
-
-
-
   return (
     <div className={classes["button-group"]}>
       <button className={classes["btn-cart"]} type="button">
@@ -16,9 +12,11 @@ function ButtonGroup(props) {
       <button className={classes["btn-ask"]} type="button">
         Ask a Staff
       </button>
-      <button className={classes["btn-delete"]} type="button">
-        Delete Menu
-      </button>
+      {role === 1 && (
+        <button className={classes["btn-delete"]} type="button">
+          Delete Menu
+        </button>
+      )}
     </div>
   );
 }

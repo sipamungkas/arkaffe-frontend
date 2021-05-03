@@ -50,6 +50,4 @@ function DescriptionCard() {
   );
 }
 
-// className={`${classes.circle} ${classes.active}`}
-
 export default DescriptionCard;
