@@ -4,6 +4,7 @@
   padding: 1rem;
   border-radius: 10px;
   transition: all ease-in-out 0.5s;
+  min-height: 11rem;
 }
 
 .item:hover {

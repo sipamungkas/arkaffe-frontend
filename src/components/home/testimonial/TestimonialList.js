@@ -2,7 +2,8 @@ import TestimonialItem from "./TestimonialItem";
 
 import classes from "./TestimonialList.module.css";
 
-export default function TestimonialList() {
+export default function TestimonialList(props) {
+  const { testimonials } = props;
   return (
     <section className={`container ${classes.testimonial}`}>
       <h2 className="section-title text-center">
@@ -15,7 +16,15 @@ export default function TestimonialList() {
         pleasure.
       </p>
       <div className={classes["testimonial-list"]}>
-        <div className={classes.wrapper}>
+        {testimonials.map((testimonial, index) => (
+          <div className={classes.wrapper} key={index}>
+            <TestimonialItem testimonial={testimonial} />
+          </div>
+        ))}
+        {/* <div className={classes.wrapper}>
+          <TestimonialItem testimonial={testimonial} />
+        </div> */}
+        {/* <div className={classes.wrapper}>
           <TestimonialItem />
         </div>
         <div className={classes.wrapper}>
@@ -23,10 +32,7 @@ export default function TestimonialList() {
         </div>
         <div className={classes.wrapper}>
           <TestimonialItem />
-        </div>
-        <div className={classes.wrapper}>
-          <TestimonialItem />
-        </div>
+        </div> */}
       </div>
       <div className="w-100 mt-4 d-flex align-items-center justify-content-between">
         <div className={classes["indicator-container"]}>

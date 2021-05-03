@@ -1,6 +1,7 @@
 import classes from "./TestimonialItem.module.css";
 
-export default function TestimonialItem() {
+export default function TestimonialItem(props) {
+  const { testimonial } = props;
   return (
     <div className={classes.item}>
       <div className={classes.head}>
@@ -11,17 +12,21 @@ export default function TestimonialItem() {
             alt="avatar1"
           />
           <div>
-            <p className={classes.name}>Viezh Robert</p>
+            <p className={classes.name}>
+              {testimonial.username || "Viezh Robert"}
+            </p>
             <p className={classes.address}>Warsaw, Poland</p>
           </div>
         </div>
         <div className={classes.rating}>
-          4.5 <img src="/assets/icons/rating.svg" alt="rating" />
+          {testimonial.rating || 4.5}
+          <img src="/assets/icons/rating.svg" alt="rating" />
         </div>
       </div>
       <div className={classes.content}>
-        “Wow... I am very happy to spend my whole day here. the Wi-fi is good,
-        and the coffee and meals tho. I like it here!! Very recommended!
+        {testimonial.message ||
+          `“Wow... I am very happy to spend my whole day here. the Wi-fi is good,
+        and the coffee and meals tho. I like it here!! Very recommended!`}
       </div>
     </div>
   );
