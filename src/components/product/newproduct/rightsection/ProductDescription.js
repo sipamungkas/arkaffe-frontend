@@ -2,15 +2,24 @@ import React, { useState } from "react";
 import classes from "./ProductDescription.module.css";
 
 function ProductDescription() {
-  const [R, setR] = useState(false);
-  const [L, setL] = useState(false);
+  const [sizes, setSizes] = useState([]);
 
   const onclickHandler = (e) => {
-    let {name, checked} = e.target
-    
+    if (sizes.includes(e.target.value)) {
+      const data = sizes;
+      data.splice(
+        data.findIndex((size) => size === e.target.value),
+        1
+      );
+      setSizes(data);
+      // remove dari array pakai splice
+    } else {
+      const newData = [...sizes, e.target.value];
+      setSizes(newData);
+    }
   };
-  console.log(R)
 
+  console.log(sizes);
   return (
     <>
       <main className={classes["productdesc-container"]}>
@@ -55,29 +64,59 @@ function ProductDescription() {
           <div className={classes["product-size"]}>
             <div className={classes["drink-size"]}>
               <label className={`${classes["option"]}`}>
-                <input type="checkbox" name="R" onChange={onclickHandler} />
+                <input
+                  type="checkbox"
+                  name="R"
+                  value="R"
+                  onChange={onclickHandler}
+                />
                 <span className={classes["text-size"]}>R</span>
               </label>
               <label className={`${classes["option"]}`}>
-                <input type="checkbox" name="L" onChange={onclickHandler}/>
+                <input
+                  type="checkbox"
+                  name="L"
+                  value="L"
+                  onChange={onclickHandler}
+                />
                 <span className={classes["text-size"]}>L</span>
               </label>
               <label className={`${classes["option"]}`}>
-                <input type="checkbox" name="XL" onChange={onclickHandler}/>
+                <input
+                  type="checkbox"
+                  name="XL"
+                  value="XL"
+                  onChange={onclickHandler}
+                />
                 <span className={classes["text-size"]}>XL</span>
               </label>
             </div>
             <div className={classes["food-size"]}>
               <label className={`${classes["option"]}`}>
-                <input type="checkbox" name="250" onChange={onclickHandler}/>
+                <input
+                  type="checkbox"
+                  name="250"
+                  value="250"
+                  onChange={onclickHandler}
+                />
                 <span className={classes["text-size2"]}>250 gr</span>
               </label>
               <label className={`${classes["option"]}`}>
-                <input type="checkbox" name="300" onChange={onclickHandler}/>
+                <input
+                  type="checkbox"
+                  name="300"
+                  value="300"
+                  onChange={onclickHandler}
+                />
                 <span className={classes["text-size2"]}>300 gr</span>
               </label>
               <label className={`${classes["option"]}`}>
-                <input type="checkbox" name="500" onChange={onclickHandler}/>
+                <input
+                  type="checkbox"
+                  name="500"
+                  value="500"
+                  onChange={onclickHandler}
+                />
                 <span className={classes["text-size2"]}>500 gr</span>
               </label>
             </div>
