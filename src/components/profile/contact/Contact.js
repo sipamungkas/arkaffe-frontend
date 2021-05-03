@@ -1,15 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import EditPencil from "../../editPencil/EditPencil";
 
 import classes from "./Contact.module.css";
 
-export default function Contact() {
-  const [email, setEmail] = useState("zulaikha17@gmail.com");
-  const [phoneNumber, setPhoneNumber] = useState("(+62)813456782");
-  const [address, setAddress] = useState(
-    "Iskandar Street no. 67 Block A Near Bus Stop"
-  );
+export default function Contact(props) {
+  const { user } = props;
+  console.log(user, "Contacts");
+  const [email, setEmail] = useState(user.email);
+  const [phoneNumber, setPhoneNumber] = useState(user.phone_number);
+  const [address, setAddress] = useState(user.address);
+
+  useEffect(() => {
+    setEmail(user.email);
+    setPhoneNumber(user.phone_number);
+    setAddress(user.address);
+  }, [user]);
 
   return (
     <div className={classes.card}>

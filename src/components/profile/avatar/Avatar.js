@@ -1,5 +1,6 @@
 import classes from "./Avatar.module.css";
-export default function Avatar() {
+export default function Avatar(props) {
+  const { user } = props;
   return (
     <div className={classes.card}>
       <div className={classes.circle}>
@@ -9,8 +10,8 @@ export default function Avatar() {
           alt="avatar 1"
         />
       </div>
-      <span className={classes.name}>Zulaikha</span>
-      <span className={classes.email}>zulaikha17@gmail.com</span>
+      <span className={classes.name}>{user.display_name || "No Name"} </span>
+      <span className={classes.email}>{user.email || "No Email"}</span>
       <span className={classes.history}>Has been ordered 15 products</span>
     </div>
   );
