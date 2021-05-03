@@ -2,8 +2,10 @@ import { useState, useEffect} from "react";
 import axios from "axios";
 import MenuItem from "./MenuItem";
 import classes from "./MenuList.module.css";
+import { connect } from "react-redux";
 
-export default function MenuList() {
+function MenuList(props) {
+  const token = props.loginReducer.user.token
   let [tab, setTab] = useState(1);
   let [productlist, setProductList] = useState([]);
   const BASE_URL = process.env.REACT_APP_API;
@@ -20,7 +22,9 @@ export default function MenuList() {
     if (currentTab) {
       currentTab = tabList[currentTab];
     }
-    axios(`${BASE_URL}/product?category=${currentTab}`)
+    axios(`${BASE_URL}/product?category=${currentTab}`, {
+      headers: { Authorization: `Bearer ${token}`}
+    })
       .then((res) => {
         setProductList(res.data.data);
       })
@@ -60,3 +64,12 @@ export default function MenuList() {
     </section>
   );
 }
+
+const mapStatetoProps = (state) => {
+  return {
+    loginReducer: state.loginReducer,
+  };
+};
+const connectedMenuList = connect(mapStatetoProps)(MenuList)
+
+export default connectedMenuList
