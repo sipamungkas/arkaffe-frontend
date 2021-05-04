@@ -3,11 +3,16 @@ import axios from "axios";
 import MenuItem from "./MenuItem";
 import classes from "./MenuList.module.css";
 import { connect } from "react-redux";
+import { useLocation, useHistory } from "react-router-dom";
 
 function MenuList(props) {
   const token = props.loginReducer.user.token;
   let [tab, setTab] = useState(1);
   let [productlist, setProductList] = useState([]);
+
+  const location = useLocation();
+  const history = useHistory();
+
   const BASE_URL = process.env.REACT_APP_API;
   const tabList = [
     "Favorite Product",
@@ -16,13 +21,31 @@ function MenuList(props) {
     "Foods",
     "Add-on",
   ];
-  let currentTab = tab;
+  // let currentTab = tab;
 
-  let getProduct = () => {
-    if (currentTab) {
-      currentTab = tabList[currentTab];
+  // let getProduct = (query) => {
+  //   // if (currentTab) {
+  //   //   currentTab = tabList[currentTab];
+  //   // }
+  //   // axios(`${BASE_URL}/product?category=${currentTab}`, {
+  //   axios(`${BASE_URL}/product${query}`, {
+  //     headers: { Authorization: `Bearer ${token}` },
+  //   })
+  //     .then((res) => {
+  //       setProductList(res.data.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+
+  useEffect(() => {
+    // getProduct(location.search);
+    let query = `?category=Coffee`;
+    if (location.search) {
+      query = location.search;
     }
-    axios(`${BASE_URL}/product?category=${currentTab}`, {
+    axios(`${BASE_URL}/product${query}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
@@ -31,12 +54,7 @@ function MenuList(props) {
       .catch((err) => {
         console.log(err);
       });
-  };
-
-  useEffect(() => {
-    getProduct();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentTab]);
+  }, [location, BASE_URL, token]);
 
   return (
     <section className={classes["menu-list"]}>
@@ -44,7 +62,10 @@ function MenuList(props) {
         {tabList.map((tabName, index) => (
           <span
             key={index}
-            onClick={() => setTab(index)}
+            onClick={() => {
+              setTab(index);
+              history.push(`/products?category=${tabList[index]}`);
+            }}
             className={`${classes["tab-content"]} ${
               index === tab ? classes.active : ""
             }`}
