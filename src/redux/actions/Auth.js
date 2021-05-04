@@ -21,24 +21,24 @@ export function loginHandler(data) {
   };
 }
 
-export function signupHandler(data) {
-  return (dispatch) => {
-    dispatch({
-      type: "SIGNUP_PENDING",
-    });
-    axios
-      .post(`${BASE_URL}/auth/register`, data)
-      .then((res) => {
-        dispatch({ type: "SIGNUP_SUCCESS", payload: res.data });
-      })
-      .catch((err) => {
-        dispatch({
-          type: "SIGNUP_ERROR",
-          payload: err,
-        });
-      });
-  };
-}
+// export function signupHandler(data) {
+//   return (dispatch) => {
+//     dispatch({
+//       type: "SIGNUP_PENDING",
+//     });
+//     axios
+//       .post(`${BASE_URL}/auth/register`, data)
+//       .then((res) => {
+//         dispatch({ type: "SIGNUP_SUCCESS", payload: res.data });
+//       })
+//       .catch((err) => {
+//         dispatch({
+//           type: "SIGNUP_ERROR",
+//           payload: err,
+//         });
+//       });
+//   };
+// }
 
 export function resetHandler(data) {
   return (dispatch) => {

@@ -84,7 +84,12 @@ function MenuList(props) {
         ))}
       </div>
       {props.loginReducer.user.role === 1 ? (
-        <button className={`btn ${classes["btn-new-product"]}`}>
+        <button
+          className={`btn ${classes["btn-new-product"]}`}
+          onClick={() => {
+            history.push("/products/new");
+          }}
+        >
           Add New Product
         </button>
       ) : (

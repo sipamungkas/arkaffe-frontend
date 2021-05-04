@@ -1,10 +1,12 @@
 import PromoItem from "./PromoItem";
 import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import classes from "./Promo.module.css";
 
 function Promo(props) {
   const { user } = props.loginReducer;
+  const history = useHistory()
   return (
     <section className={`container ${classes.promo}`}>
       <h2 className="section-title text-center m-0">Promo for you</h2>
@@ -27,7 +29,12 @@ function Promo(props) {
         <li>Should make member card to apply coupon</li>
       </ol>
       {user.role === 1 ? (
-        <button className={`btn ${classes["add-new-promo"]}`}>
+        <button
+          className={`btn ${classes["add-new-promo"]}`}
+          onClick={() => {
+            history.push("/promo/new")
+          }}
+        >
           Add new promo
         </button>
       ) : (
