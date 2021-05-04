@@ -1,10 +1,12 @@
 
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import classes from "./ProductDescription.module.css";
 
 function ProductDescription(props) {
   const [sizes, setSizes] = useState([]);
   const [coba, setCoba] = useState("")
+  const history = useHistory()
 
   const onclickHandler = (e) => {
     if (sizes.includes(e.target.value)) {
@@ -150,7 +152,9 @@ function ProductDescription(props) {
             <button className={classes["btn-submit"]} type="button" onClick={onSubmitHandler}>
               Save Product
             </button>
-            <button className={classes["btn-cancel"]} type="">
+            <button className={classes["btn-cancel"]} type="button" onClick={()=>{
+              history.goBack()
+            }} >
               Cancel
             </button>
           </div>

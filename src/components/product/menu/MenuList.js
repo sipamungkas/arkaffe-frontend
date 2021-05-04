@@ -3,6 +3,7 @@ import axios from "axios";
 import MenuItem from "./MenuItem";
 import classes from "./MenuList.module.css";
 import { connect } from "react-redux";
+import { useHistory } from "react-router";
 
 function MenuList(props) {
   // const token = props.loginReducer.user.token;
@@ -17,6 +18,7 @@ function MenuList(props) {
     "Add-on",
   ];
   let currentTab = tab;
+  const history = useHistory()
 
   let getProduct = () => {
     if (currentTab) {
@@ -63,7 +65,9 @@ function MenuList(props) {
         ))}
       </div>
       {props.loginReducer.user.role === 1 ? (
-        <button className={`btn ${classes["btn-new-product"]}`} >
+        <button className={`btn ${classes["btn-new-product"]}`} onClick={()=> {
+            history.push("/products/new")
+        }} >
           Add New Product
         </button>
       ) : (

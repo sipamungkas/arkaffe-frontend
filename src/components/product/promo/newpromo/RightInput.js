@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import classes from "./RightInput.module.css";
 
 function RightInput() {
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [sizes, setSizes] = useState([]);
   const history = useHistory()
