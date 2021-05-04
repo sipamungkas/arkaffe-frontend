@@ -5,7 +5,7 @@ import classes from "./MenuList.module.css";
 import { connect } from "react-redux";
 
 function MenuList(props) {
-  const token = props.loginReducer.user.token;
+  // const token = props.loginReducer.user.token;
   let [tab, setTab] = useState(1);
   let [productlist, setProductList] = useState([]);
   const BASE_URL = process.env.REACT_APP_API;
@@ -22,9 +22,9 @@ function MenuList(props) {
     if (currentTab) {
       currentTab = tabList[currentTab];
     }
-    axios(`${BASE_URL}/product?category=${currentTab}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
+    axios(`${BASE_URL}/product?category=${currentTab}`, 
+    // {headers: { Authorization: `Bearer ${token}` },}
+    )
       .then((res) => {
         setProductList(res.data.data);
       })
@@ -63,7 +63,7 @@ function MenuList(props) {
         ))}
       </div>
       {props.loginReducer.user.role === 1 ? (
-        <button className={`btn ${classes["btn-new-product"]}`}>
+        <button className={`btn ${classes["btn-new-product"]}`} >
           Add New Product
         </button>
       ) : (

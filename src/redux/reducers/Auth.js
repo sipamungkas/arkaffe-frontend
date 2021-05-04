@@ -50,33 +50,33 @@ export let loginReducer = (state = initialState, action) => {
       return state;
   }
 };
-export let signupReducer = (state = initialState, action) => {
-  const { type, payload } = action;
-  switch (type) {
-    case "SIGNUP_PENDING":
-      return {
-        ...state,
-        isPending: true,
-        isRejected: false,
-        isFulfilled: false,
-      };
-    case "SIGNUP_ERROR":
-      return {
-        ...state,
-        isRejected: true,
-        isPending: false,
-        error: payload,
-      };
-    case "SIGNUP_SUCCESS":
-      return {
-        ...state,
-        isPending: false,
-        isRejected: false,
-        isFulfilled: true,
-        result: payload,
-      };
+// export let signupReducer = (state = initialState, action) => {
+//   const { type, payload } = action;
+//   switch (type) {
+//     case "SIGNUP_PENDING":
+//       return {
+//         ...state,
+//         isPending: true,
+//         isRejected: false,
+//         isFulfilled: false,
+//       };
+//     case "SIGNUP_ERROR":
+//       return {
+//         ...state,
+//         isRejected: true,
+//         isPending: false,
+//         error: payload,
+//       };
+//     case "SIGNUP_SUCCESS":
+//       return {
+//         ...state,
+//         isPending: false,
+//         isRejected: false,
+//         isFulfilled: true,
+//         result: payload,
+//       };
 
-    default:
-      return state;
-  }
-};
+//     default:
+//       return state;
+//   }
+// };

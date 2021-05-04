@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "../login/Login.css";
 import InputForm from "../../../components/inputform/InputForm";
 import PhoneInput from "react-phone-input-2";
 import { connect } from "react-redux";
 import { signupHandler, logoutHandler } from "../../../redux/actions/Auth";
 import Toaster, { notify } from "react-notify-toast";
+import axios from "axios";
 
 export class SignUp extends Component {
   constructor(props) {
@@ -15,26 +16,26 @@ export class SignUp extends Component {
       password: "",
       phone: "",
     };
-    this.timer = null
+    this.timer = null;
   }
-  componentDidUpdate(prevProps) {
-    const { isRejected, error, isFulfilled } = this.props.signupReducer;
-    if (prevProps !== this.props) {
-      if (isRejected) {
-        const errmessage =
-          error?.response?.data?.message ||
-          error.message ||
-          "Internal Server Error";
-        return notify.show(errmessage, "error");
-      }
-    }
-    if (isFulfilled) {
-      notify.show("Register Success, Redirecting to Login Page", "success", 4000)
-      this.timer = setTimeout(()=> {
-        this.props.history.push("/login")
-      }, 5000)
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   const { isRejected, error, isFulfilled } = this.props.signupReducer;
+  //   if (prevProps !== this.props) {
+  //     if (isRejected) {
+  //       const errmessage =
+  //         error?.response?.data?.message ||
+  //         error.message ||
+  //         "Internal Server Error";
+  //       return notify.show(errmessage, "error");
+  //     }
+  //   }
+  //   if (isFulfilled) {
+  //     notify.show("Register Success, Redirecting to Login Page", "success", 4000)
+  //     this.timer = setTimeout(()=> {
+  //       this.props.history.push("/login")
+  //     }, 5000)
+  //   }
+  // }
 
   submitHandler = (e) => {
     e.preventDefault();
@@ -43,15 +44,39 @@ export class SignUp extends Component {
       password: this.state.password,
       phone: this.state.phone,
     };
+    const BASE_URL = process.env.REACT_APP_API;
     if (!signup.email || !signup.password || !signup.phone) {
-      notify.show("Please Fill Out All Form", "warning")
+      notify.show("Please Fill Out All Form", "warning");
     }
-    this.props.onSignupHandler(signup)
+    axios
+      .post(`${BASE_URL}/auth/register`, {
+        email: signup.email,
+        password: signup.password,
+        phone: signup.phone,
+      })
+      .then((res) => {
+        notify.show(
+          "Register Success, Redirecting to Login Page",
+          "success",
+          4000
+        );
+        this.timer = setTimeout(() => {
+          this.props.history.push("/login");
+        }, 5000);
+      })
+      .catch((error) => {
+        const errmessage =
+          error?.response?.data?.message ||
+          error.message ||
+          "Internal Server Error";
+        return notify.show(errmessage, "error");
+      });
   };
+  // this.props.onSignupHandler(signup)
 
   logoutHandler = (e) => {
-    this.props.onLogoutHandler()
-  }
+    this.props.onLogoutHandler();
+  };
 
   render() {
     console.log(this.state);
@@ -132,7 +157,11 @@ export class SignUp extends Component {
                 <p>Let's join with our member and enjoy the deals.</p>
               </div>
               <div className="button-popup">
-                <button type="button" className="btn btn-member" onClick={this.logoutHandler}>
+                <button
+                  type="button"
+                  className="btn btn-member"
+                  onClick={this.logoutHandler}
+                >
                   Create Now
                 </button>
               </div>
@@ -144,22 +173,22 @@ export class SignUp extends Component {
   }
 }
 
-const mapStatetoProps = (state) => {
-  const { signupReducer } = state;
-  return { signupReducer };
-};
+// const mapStatetoProps = (state) => {
+//   const { signupReducer } = state;
+//   return { signupReducer };
+// };
 
-const mapDispatchtoProps = (dispatch) => {
-  return {
-    onSignupHandler: (data) => {
-      dispatch(signupHandler(data));
-    },
-    onLogoutHandler: () => {
-      dispatch(logoutHandler())
-    }
-  };
-};
+// const mapDispatchtoProps = (dispatch) => {
+//   return {
+//     onSignupHandler: (data) => {
+//       dispatch(signupHandler(data));
+//     },
+//     onLogoutHandler: () => {
+//       dispatch(logoutHandler());
+//     },
+//   };
+// };
 
-const connectedSignUp = connect(mapStatetoProps, mapDispatchtoProps)(SignUp);
+// const connectedSignUp = connect(mapStatetoProps, mapDispatchtoProps)(SignUp);
 
-export default connectedSignUp;
+export default withRouter(SignUp);

@@ -30,18 +30,46 @@ function App() {
           path="/login"
           exact
           protect={"isLoggedIn"}
-          redirectTo={"/products"}
+          redirectTo={"/"}
         >
           <Login />
         </PrivateRoute>
-        {/* <Route path="/login" exact component={Login} /> */}
+        <PrivateRoute
+          path="/signup"
+          exact
+          protect={"isLoggedIn"}
+          redirectTo={"/"}
+        >
+          <SignUp />
+        </PrivateRoute>
+        <PrivateRoute
+          path="/login/recover"
+          exact
+          protect={"isLoggedIn"}
+          redirectTo={"/products"}
+        >
+          <ForgotPassword />
+        </PrivateRoute>
+        <PrivateRoute
+          path="/login/reset"
+          exact
+          protect={"isLoggedIn"}
+          redirectTo={"/products"}
+        >
+          <ResetPassword />
+        </PrivateRoute>
+        {/* <Route path="/login" exact component={Login} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login/recover" component={ForgotPassword} />
-        <Route path="/login/reset" component={ResetPassword} />
+        <Route path="/login/reset" component={ResetPassword} /> */}
         <Route path="/products" exact component={Product} />
         <Route path="/products/detail" component={ProductDetail} />
-        <Route path="/products/new" component={NewProduct} />
-        <Route path="/products/edit" component={EditProduct} />
+        <PrivateRoute path="/products/new" redirectTo={"/login"}>
+          <NewProduct />
+        </PrivateRoute>
+        <PrivateRoute path="/products/edit" redirectTo={"/login"}>
+          <EditProduct />
+        </PrivateRoute>
         <Route path="/history" component={History} />
         <PrivateRoute path="/profile" redirectTo={"/login"}>
           <Profile />
