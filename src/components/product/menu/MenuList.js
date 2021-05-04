@@ -80,6 +80,9 @@ function MenuList(props) {
             key={index}
             product={product}
             user={props.loginReducer.user}
+            onClick={() => {
+              history.push(`products/detail/${product.id}`);
+            }}
           />
         ))}
       </div>

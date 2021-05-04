@@ -6,7 +6,7 @@ export default function MenuItem(props) {
   let { product, user } = props;
   const BASE_URL = process.env.REACT_APP_API;
   return (
-    <div className={classes["menu-item"]}>
+    <div className={classes["menu-item"]} onClick={props.onClick}>
       {user.role === 1 ? (
         <div className={classes.edit}>
           <EditPencil />
