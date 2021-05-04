@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import classes from "./RightInput.module.css";
 
 function RightInput() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [sizes, setSizes] = useState([]);
+  const history = useHistory()
 
   const onclickHandler = (e) => {
     if (sizes.includes(e.target.value)) {
@@ -145,7 +147,9 @@ function RightInput() {
             <button className={classes["btn-submit"]} type="submit">
               Save Promo
             </button>
-            <button className={classes["btn-cancel"]} type="">
+            <button className={classes["btn-cancel"]} type="button" onClick={()=> {
+              history.goBack()
+            }} >
               Cancel
             </button>
           </div>

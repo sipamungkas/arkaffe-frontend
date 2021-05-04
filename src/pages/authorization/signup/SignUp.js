@@ -3,8 +3,8 @@ import { Link, withRouter } from "react-router-dom";
 import "../login/Login.css";
 import InputForm from "../../../components/inputform/InputForm";
 import PhoneInput from "react-phone-input-2";
-import { connect } from "react-redux";
-import { signupHandler, logoutHandler } from "../../../redux/actions/Auth";
+// import { connect } from "react-redux";
+// import { signupHandler, logoutHandler } from "../../../redux/actions/Auth";
 import Toaster, { notify } from "react-notify-toast";
 import axios from "axios";
 
