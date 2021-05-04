@@ -4,10 +4,10 @@ import classes from "./ProductPicture.module.css";
 function ProductPicture() {
   const picturesrc = "/assets/images/img_defaultupload.png";
 
-  const onChangeHandler = (e) =>{
-    const file = e.target.files[0]
-    //setFile
-  }
+  const onChangeHandler = (e) => {
+    const file = e.target.files[0];
+    console.log(file);
+  };
   return (
     <>
       <div className={classes["container-picture"]}>
@@ -16,7 +16,11 @@ function ProductPicture() {
         </div>
         <button className={classes["btn-camera"]}>Take a picture</button>
         <label className={classes["btn-gallery"]}>
-          <input type="file" className={classes["input-file"]} onChange={onChangeHandler} />
+          <input
+            type="file"
+            className={classes["input-file"]}
+            onChange={onChangeHandler}
+          />
           Choose from gallery
         </label>
       </div>

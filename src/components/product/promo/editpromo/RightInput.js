@@ -32,6 +32,7 @@ function RightInput() {
             type="text"
             name="promoname"
             placeholder="Type promo name min. 50 characters"
+            onChange={(e) => setName(e.target.value)}
             // onChange={(e) => }
           />
           <label className={classes["label"]}>Normal Price :</label>

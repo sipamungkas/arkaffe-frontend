@@ -20,9 +20,7 @@ function DescriptionCard(props) {
       </p>
     );
   };
-  const productDesc = () => {
-    return "Cold brewing is a method of brewing that combines ground coffee and cool water and uses time instead of heat to extract the flavor. It is brewed in small batches and steeped for as long as 48 hours.";
-  };
+
   return (
     <div className={classes["desc-container"]}>
       <div className={classes["delivery-text"]}>
