@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./DescriptionCard.module.css";
 
-function DescriptionCard() {
+function DescriptionCard(props) {
   const deliverydaystart = "Monday";
   const deliverydayend = "Friday";
   const timestart = 1;
@@ -26,14 +26,12 @@ function DescriptionCard() {
   return (
     <div className={classes["desc-container"]}>
       <div className={classes["delivery-text"]}>
-        <p className={classes["text-default"]}>
-          Delivery only on&nbsp;
-        </p>
+        <p className={classes["text-default"]}>Delivery only on&nbsp;</p>
         <div className={classes["text-props"]}>{deliveryDay()}</div>
         <p className={classes["text-default"]}>&nbsp;at&nbsp;</p>
         <div className={classes["text-props"]}>{deliveryTime()}</div>
       </div>
-      <div className={classes["desc-product"]}>{productDesc()}</div>
+      <div className={classes["desc-product"]}>{props.product.description}</div>
       <h4 className={classes["text-size"]}>Choose a size</h4>
       <div className={classes["btn-group"]}>
         <button className={classes["btn-r"]} type="button">

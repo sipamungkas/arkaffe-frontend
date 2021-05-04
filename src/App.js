@@ -63,7 +63,7 @@ function App() {
         <Route path="/login/recover" component={ForgotPassword} />
         <Route path="/login/reset" component={ResetPassword} /> */}
         <Route path="/products" exact component={Product} />
-        <Route path="/products/detail" component={ProductDetail} />
+        <Route path="/products/detail/:id" component={ProductDetail} />
         <PrivateRoute path="/products/new" redirectTo={"/login"}>
           <NewProduct />
         </PrivateRoute>

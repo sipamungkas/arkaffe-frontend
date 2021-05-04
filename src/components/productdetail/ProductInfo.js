@@ -1,19 +1,20 @@
-import React from "react";
 import classes from "./ProductInfo.module.css";
 
-function ProductInfo() {
-  const productName = "Cold Brew";
-  const productPrice = 34000;
+const BASE_URL = process.env.REACT_APP_API;
+
+function ProductInfo(props) {
+  const productName = props.product.name;
+  const productPrice = props.product.price;
   return (
     <>
       <div className={classes["productinfo-container"]}>
         <img
           className={classes["img-product"]}
           alt="product_image"
-          src="/assets/images/img_product.jpg"
+          src={`${BASE_URL}/${props.product.imageProduct}`}
         ></img>
         <h1 className={classes["title-product"]}>{productName}</h1>
-        <p className={classes["price-product"]}>IDR{" "}{productPrice}</p>
+        <p className={classes["price-product"]}>IDR {productPrice}</p>
       </div>
     </>
   );
