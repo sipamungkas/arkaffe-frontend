@@ -32,7 +32,7 @@ export default function Home() {
       <Pricing />
       <Location />
       <Partner />
-      {testimonials.length > 0 && (
+      {testimonials?.length > 0 && (
         <TestimonialList testimonials={testimonials} />
       )}
       <Cta />
