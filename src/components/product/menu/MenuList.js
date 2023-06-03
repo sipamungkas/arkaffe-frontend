@@ -75,7 +75,7 @@ function MenuList(props) {
         ))}
       </div>
       <div className={classes["menu-container"]}>
-        {productlist.map((product, index) => (
+        {productlist?.map((product, index) => (
           <MenuItem
             key={index}
             product={product}
